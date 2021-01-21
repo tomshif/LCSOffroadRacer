@@ -52,7 +52,8 @@ class GameScene: SKScene {
         cam.addChild(puAnchor)
         puAnchor.name="puAnchor"
 
-    
+        loadStartUp()
+        
         
         changeGameState(to: GAMESTATE.MAINMENU)
     }// didMove
@@ -210,6 +211,14 @@ class GameScene: SKScene {
             print("keyDown: \(event.characters!) keyCode: \(event.keyCode)")
         } // switch keyCode
     } // keyDown
+    
+    func loadStartUp()
+    {
+        // This function will handle initialization of the game as a whole.
+        // This will include (primarily) sound initialization
+        
+        
+    } // loadStartUp
     
     func loadMainMenu()
     {
