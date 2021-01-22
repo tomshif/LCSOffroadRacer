@@ -39,3 +39,12 @@ struct POPTYPE
     static let YESNO:Int=2
     
 }
+
+struct PARTTYPE
+{
+    static let CHASSIS:Int=0
+    static let ENGINE:Int=1
+    static let TIRES:Int=2
+    static let AXLE:Int=3
+    static let GEARBOX:Int=4
+}
