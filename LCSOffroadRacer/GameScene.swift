@@ -90,8 +90,8 @@ class GameScene: SKScene {
         
         default:
             print("Error - Unhandled click in gameState \(gameState).")
-        }
-    }
+        } // switch gameState
+    } // touchDown
     
     func touchMoved(toPoint pos : CGPoint) {
  
@@ -208,8 +208,8 @@ class GameScene: SKScene {
             
         default:
             print("keyDown: \(event.characters!) keyCode: \(event.keyCode)")
-        }
-    }
+        } // switch keyCode
+    } // keyDown
     
     func loadMainMenu()
     {
@@ -308,12 +308,12 @@ class GameScene: SKScene {
         var erTemp=SKSpriteNode(imageNamed: "erTemp")
         erAnchor.addChild(erTemp)
         gameState=GAMESTATE.ENDRACE
-    }
+    } // loadEndRaceScreen
     
     func changeGameState(to: Int)
     {
         // This function will change the gameState from one state to another.
-        // NOTE: NEVER change gameState directly. ALWAYS call this function to change, not the functions that may load certain screens (such as 'loadMainMenu()'). This is important because there will be clean up of screens that we're leaving in this function, as well as (possibly) loading new assets, etc.
+        // NOTE: NEVER change gameState directly. ALWAYS call this function to change, not the functions that may load certain screens (such as 'loadMainMenu()') or by altering the currentState variable. This is important because there will be clean up of screens that we're leaving in this function, as well as loading new assets, etc.
         
         if (gameState != to)
         {
@@ -404,5 +404,19 @@ class GameScene: SKScene {
     
     override func update(_ currentTime: TimeInterval) {
         // Called before each frame is rendered
-    }
-}
+        
+        switch gameState
+        {
+        case GAMESTATE.MAINMENU:
+            break
+            
+        default:
+            print("Invalid gameState in update()")
+            break
+             
+        } // switch gameState
+        
+        
+        
+    } // update()
+} // class GameScene

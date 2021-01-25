@@ -21,6 +21,13 @@ class PopUpClass
     // - in GameScene, if you need to see what the previous mode was (before the pop up), you can reach into currentPopUp.prevGameState to check. This will be important in how the pop up results are handled.
     
     
+    // Example of how to create pop up:
+    /*
+    if (currentPopUp == nil)
+    {
+        currentPopUp=PopUpClass(theScene: self, popType: POPTYPE.YESNO, parentNode: puAnchor, popText: "Testing - Do you know how to use pop up windows?")
+    }
+    */
     
     
     var scene:GameScene?
