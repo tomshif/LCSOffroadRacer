@@ -32,7 +32,9 @@ class RaceClass
     var isStorming:Bool = false
     var isSunny:Bool = true
     
-    var timeRacing:Int = 0
+    var startTime = NSDate()
+    var currentTime = NSDate()
+    var endTime = NSDate()
     
     var isHard:Bool = false
     var isMedium:Bool = false
@@ -64,7 +66,10 @@ class RaceClass
     
     func raceStats()
     {
-        
+        func timer()
+        {
+            
+        } // func timer
     } // func raceStats
     
     func destroyCar()
@@ -91,6 +96,16 @@ class RaceClass
     {
         
     } // func weather
+    
+    func particles() // controls the particles coming from the car
+    {
+        
+    } // func particles
+    
+    func playersPlace()
+    {
+        
+    } // func playersPlace
 
     init()
     {
