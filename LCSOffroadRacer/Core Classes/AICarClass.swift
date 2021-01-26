@@ -24,6 +24,7 @@ class AICarClass
     // constants
     let maxAICarSpeed:Double = 300
     let maxAICarEnginePower:Double = 300
+    let maxAICarTurnRate:Double = 10
 
     init()
     {
