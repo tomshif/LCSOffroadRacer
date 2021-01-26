@@ -11,11 +11,15 @@ import SpriteKit
 class AICarClass
 {
     // variables
+    var AICarSprite = SKSpriteNode()
+    var theScene = GameScene()
+    
     var AICarSpeed:Double = 0
     var AICarEnginePower:Double = 0
     var AICarTraction:Double = 0
     var AICarTurnRate:Double = 0
-    // var AICarVector:CGVector = vector2(0, 0)
+    var AICarAcceleration:Double = 0
+    var AICarVector = CGVector()
 
     // constants
     let maxAICarSpeed:Double = 300
