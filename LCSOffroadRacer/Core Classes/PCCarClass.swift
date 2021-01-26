@@ -19,7 +19,7 @@ class PCCarClass
     var traction:CGFloat = 10
     var acceleration:CGFloat = 10
 
-    var engine=PartClass() //affects speed
+    var engine=PartClass() // affects speed
     var axle=PartClass() // affects turning
     var tires=PartClass() // affects traction
     var gearbox=PartClass() // affects acceleration
@@ -33,6 +33,10 @@ class PCCarClass
     // booleans
     var isAccelerating = false
     /*
+    public func updateStats() {
+     
+    } //public func updateStats() / determines part ratings
+     
     public func speedUp() {
         if currentSpeed < speed*speed*engine {
             currentSpeed += acceleration*gearbox
@@ -54,7 +58,16 @@ class PCCarClass
             sprite.zPosition -= (traction*tires)/60
         } //if currentSpeed > 1 / car must be moving to turn
     } //public func turnRight() / turns car right
-    
+     
+     public func reverseSpeed() {
+        if currentSpeed > 0 {
+            currentSpeed -= traction*tires
+        } //if currentSpeed > 0  / car must be moving forward
+        if currentSpeed <= 0 && currentSpeed < -speed*engine {
+            currentSpeed -= acceleration*gearbox
+        } // if currentSpeed <= 0 and < -speed*engine / car must be stopped or already in reverse, plus lower than negative max speed
+     } // public func reverseSpeed() / either stops the car or puts it in reverse
+     
     public func updatePlayer() {
         let dx = cos(sprite.zRotation)*currentSpeed/60
         let dy = sin(sprite.zRotation)*currentSpeed/60
