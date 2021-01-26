@@ -11,8 +11,9 @@ import SpriteKit
 class PlayerClass
 {
     // variables
-
-
+    var money:Int = 1
+    var RaceEntered = SKSpriteNode()
+    var carsDestroyed:Int = 1
 
     // constants
 
