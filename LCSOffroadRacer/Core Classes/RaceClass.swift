@@ -10,6 +10,7 @@ import SpriteKit
 
 class RaceClass
 {
+    var theScene:GameScene?
     
     var currentRank:Int = 1
     
@@ -22,23 +23,27 @@ class RaceClass
     var medCarAmount:Int = 5
     var hardCarAmount:Int = 8
     
-    var isNight:Bool = false
-    var isEvening:Bool = false
-    var isMorning:Bool = false
-    var isDay:Bool = true
+    var isSunrise:Bool = false
     
     var isRaining:Bool = false
     var isSnowing:Bool = false
     var isStorming:Bool = false
-    var isSunny:Bool = true
     
     var startTime = NSDate()
     var currentTime = NSDate()
     var endTime = NSDate()
     
-    var isHard:Bool = false
-    var isMedium:Bool = false
-    var isEasy:Bool = true
+    var isEasy1:Bool = false
+    var isMedium1:Bool = false
+    var isHard1:Bool = false
+    var isEasy2:Bool = false
+    var isMedium2:Bool = false
+    var isHard2:Bool = false
+    var isEasy3:Bool = false
+    var isMedium3:Bool = false
+    var isHard3:Bool = false
+    
+    var MMR:Int = 0
     // variables
 
     let hardFirstPlaceMoney:Int = 1000
@@ -94,7 +99,20 @@ class RaceClass
     
     func weather()
     {
+        let chooseWeather = random(min: 0, max: 1)
         
+        if chooseWeather > 0.8
+        {
+            isRaining = true
+        }
+        else if chooseWeather > 0.6
+        {
+            isSnowing = true
+        }
+        else if chooseWeather > 0.5
+        {
+            isStorming = true
+        } // Choose weather
     } // func weather
     
     func particles() // controls the particles coming from the car
@@ -107,8 +125,11 @@ class RaceClass
         
     } // func playersPlace
 
-    init()
+    init(MMR:Int, scene:GameScene)
     {
+        theScene = scene
+        
+        
         
     } // init
 
