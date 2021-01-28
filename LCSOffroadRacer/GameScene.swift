@@ -411,7 +411,7 @@ class GameScene: SKScene {
             break
             
         default:
-            print("Invalid gameState in update()")
+            //print("Invalid gameState in update()")
             break
              
         } // switch gameState
