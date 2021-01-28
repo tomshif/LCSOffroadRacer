@@ -167,15 +167,15 @@ class GameScene: SKScene {
                 
                 
                 // frame currently selected race
-                if currentRaceSelected > 0
+                if currentRaceSelected > 0 && gameState==GAMESTATE.CHOOSERACE
                 {
-                    for node in crAnchor.children
+                    for node2 in crAnchor.children
                     {
-                        if node.name != nil
+                        if node2.name != nil
                         {
-                            if node.name!.contains("crSelect")
+                            if node2.name!.contains("crSelect")
                             {
-                                node.removeFromParent()
+                                node2.removeFromParent()
                             }
                         } // if not nil
                     } // for each child on the crAnchor
@@ -280,7 +280,7 @@ class GameScene: SKScene {
         mmAnchor.addChild(mmPlayButton)
         
         gameState=GAMESTATE.MAINMENU
-        
+        currentRaceSelected = -1
         
         if (currentPopUp == nil)
         {
@@ -335,6 +335,26 @@ class GameScene: SKScene {
         
         gameState=GAMESTATE.CHOOSERACE
         
+        if currentRaceSelected > 0 && gameState==GAMESTATE.CHOOSERACE
+        {
+            for node2 in crAnchor.children
+            {
+                if node2.name != nil
+                {
+                    if node2.name!.contains("crSelect")
+                    {
+                        node2.removeFromParent()
+                    }
+                } // if not nil
+            } // for each child on the crAnchor
+            
+            let crSelect = SKSpriteNode(imageNamed: "cr_chooseRaceOutline")
+            crSelect.position.x = -size.width*0.3+size.width*0.3*CGFloat(currentRaceSelected-1)
+            crSelect.zPosition=5
+            crSelect.name="crSelect"
+            crAnchor.addChild(crSelect)
+            
+        } // if we have a race selected
 
         
     } // loadChooseRaceScreen
@@ -403,16 +423,21 @@ class GameScene: SKScene {
             case GAMESTATE.CHOOSERACE:
                 if(to==GAMESTATE.STARTRACE)
                 {
+                    print("CR Node Count: \(crAnchor.children.count)")
                     crAnchor.removeAllChildren()
+                    print("CR Node Count: \(crAnchor.children.count)")
                     loadStartRaceScreen()
                 }
                 else if to==GAMESTATE.RACEPREVIEW
                 {
+                    print("CR Node Count: \(crAnchor.children.count)")
                     crAnchor.removeAllChildren()
+                    print("After - CR Node Count: \(crAnchor.children.count)")
                     loadRacePreviewScreen()
                 }
                 else if to==GAMESTATE.UPGRADE
                 {
+                    print("CR Node Count: \(crAnchor.children.count)")
                     crAnchor.removeAllChildren()
                     loadUpgradeScreen()
                 }
