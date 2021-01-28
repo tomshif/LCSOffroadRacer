@@ -68,7 +68,7 @@ func updateAll()
     
 } // HUDClass
 
-//-startTime.timeIntrervalSinceNow
+//-startTime.timeIntervalSinceNow
 //var lastplacecheck = NSDate()
 //if -lastplacecheck.timeintervalsincenow > 1
 //
