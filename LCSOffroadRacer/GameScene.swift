@@ -32,6 +32,7 @@ class GameScene: SKScene {
     
     var currentPopUp:PopUpClass?
     
+    var currentRaceSelected:Int = -1
 
     
     override func didMove(to view: SKView) {
@@ -122,7 +123,7 @@ class GameScene: SKScene {
         {
             if node.name != nil
             {
-                if node.name=="mmLogo"
+                if node.name=="mmPlayButton"
                 {
                     
                     changeGameState(to: GAMESTATE.CHOOSERACE)
@@ -146,15 +147,46 @@ class GameScene: SKScene {
                     
                     changeGameState(to: GAMESTATE.RACEPREVIEW)
                 }
-                else if node.name == "crButton"
+                else if node.name == "crRace1"
                 {
                     
-                    changeGameState(to: GAMESTATE.STARTRACE)
+                    currentRaceSelected=1
+                }
+                else if node.name == "crRace2"
+                {
+                    currentRaceSelected=2
+                }
+                else if node.name == "crRace3"
+                {
+                    currentRaceSelected=3
                 }
                 else if node.name == "upButton"
                 {
                     changeGameState(to: GAMESTATE.UPGRADE)
                 }
+                
+                
+                // frame currently selected race
+                if currentRaceSelected > 0
+                {
+                    for node in crAnchor.children
+                    {
+                        if node.name != nil
+                        {
+                            if node.name!.contains("crSelect")
+                            {
+                                node.removeFromParent()
+                            }
+                        } // if not nil
+                    } // for each child on the crAnchor
+                    
+                    let crSelect = SKSpriteNode(imageNamed: "cr_chooseRaceOutline")
+                    crSelect.position.x = -size.width*0.3+size.width*0.3*CGFloat(currentRaceSelected-1)
+                    crSelect.zPosition=5
+                    crSelect.name="crSelect"
+                    crAnchor.addChild(crSelect)
+                    
+                } // if we have a race selected
             } // if the name is not nil
         } // for each node
         
@@ -224,22 +256,30 @@ class GameScene: SKScene {
     {
         cam.position = CGPoint.zero
         
-        let tempBG=SKSpriteNode(imageNamed: "mmTempBack01")
-        let tempLogo=SKSpriteNode(imageNamed: "tempLogo")
-        let tempFrame=SKSpriteNode(imageNamed: "mmMenuFrame01")
+        let mmBG=SKSpriteNode(imageNamed: "mmTempBack01")
+        let mmLogo=SKSpriteNode(imageNamed: "tempLogo")
+        let mmFrame=SKSpriteNode(imageNamed: "mmMenuFrame01")
+        
+        
+        mmAnchor.addChild(mmBG)
+        
+        mmLogo.position = CGPoint(x: -size.width*0.35, y: size.height*0.35)
+        mmLogo.zPosition=1
+        mmLogo.name="mmLogo"
+        mmAnchor.addChild(mmLogo)
+        
+        mmFrame.position.x = 0
+        mmFrame.position.y = -size.height*0.1
+        mmFrame.zPosition=2
+        mmAnchor.addChild(mmFrame)
+        
+        let mmPlayButton=SKSpriteNode(imageNamed: "mm_newGameButton")
+        mmPlayButton.name="mmPlayButton"
+        mmPlayButton.zPosition=5
+        mmPlayButton.position.y=mmFrame.size.height*0.15
+        mmAnchor.addChild(mmPlayButton)
         
         gameState=GAMESTATE.MAINMENU
-        mmAnchor.addChild(tempBG)
-        
-        tempLogo.position = CGPoint(x: -size.width*0.35, y: size.height*0.35)
-        tempLogo.zPosition=1
-        tempLogo.name="mmLogo"
-        mmAnchor.addChild(tempLogo)
-        
-        tempFrame.position.x = -size.width*0.35
-        tempFrame.position.y = -size.height*0.1
-        tempFrame.zPosition=2
-        mmAnchor.addChild(tempFrame)
         
         
         if (currentPopUp == nil)
@@ -261,24 +301,37 @@ class GameScene: SKScene {
     func loadChooseRaceScreen()
     {
         // Temp Images
-        var crTemp=SKSpriteNode(imageNamed: "crTemp")
-        crTemp.name="crButton"
-        crAnchor.addChild(crTemp)
+        let crRace1=SKSpriteNode(imageNamed: "crTemp")
+        crRace1.name="crRace1"
+        crRace1.position.x = -size.width*0.3
+        crAnchor.addChild(crRace1)
+        
+        let crRace2=SKSpriteNode(imageNamed: "crTemp")
+        crRace2.name="crRace2"
+        crRace2.position.x = 0
+        crAnchor.addChild(crRace2)
+        
+        let crRace3=SKSpriteNode(imageNamed: "crTemp")
+        crRace3.name="crRace3"
+        crRace3.position.x = size.width*0.3
+        crAnchor.addChild(crRace3)
+        
+        
         
         // Temp image to go to Race Preview
-        var rpTemp=SKSpriteNode(imageNamed: "rpTemp")
-        rpTemp.name="rpButton"
-        rpTemp.setScale(0.5)
-        rpTemp.position=CGPoint(x: -size.width*0.25, y: -size.height*0.25)
-        crAnchor.addChild(rpTemp)
+        let rpButton=SKSpriteNode(imageNamed: "rpTemp")
+        rpButton.name="rpButton"
+        rpButton.setScale(0.5)
+        rpButton.position=CGPoint(x: -size.width*0.35, y: -size.height*0.35)
+        crAnchor.addChild(rpButton)
         
         // Temp image to go to upgrade
-        var upTemp=SKSpriteNode(imageNamed: "upTemp")
-        upTemp.name="upButton"
-        upTemp.position.x = -size.width*0.25
-        upTemp.position.y = size.height*0.25
-        upTemp.setScale(0.5)
-        crAnchor.addChild(upTemp)
+        let upButton=SKSpriteNode(imageNamed: "upTemp")
+        upButton.name="upButton"
+        upButton.position.x = size.width*0.35
+        upButton.position.y = -size.height*0.35
+        upButton.setScale(0.5)
+        crAnchor.addChild(upButton)
         
         gameState=GAMESTATE.CHOOSERACE
         
