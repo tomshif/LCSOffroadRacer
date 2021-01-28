@@ -14,6 +14,7 @@ class PlayerClass
     var money:Int = 1
     var RaceEntered = SKSpriteNode()
     var carsDestroyed:Int = 1
+    
 
     // constants
 
