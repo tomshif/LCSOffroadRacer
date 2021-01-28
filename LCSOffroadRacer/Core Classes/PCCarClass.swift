@@ -11,7 +11,7 @@ class PCCarClass
 {
     // variables
     var sprite = SKSpriteNode()
-    var theScene = GameScene()
+    var theScene : GameScene?
     var playerVector = CGVector()
     
     var speed:CGFloat = 10
@@ -33,6 +33,11 @@ class PCCarClass
     // booleans
     var isAccelerating = false
     /*
+    init(mmr: Int, scene: GameScene) {
+        theScene = scene
+        theScene!.irAnchor.addChild(sprite)
+     } // init(scene: GameScene) / initializes the scene
+     
     public func updateStats() {
      
     } //public func updateStats() / determines part ratings
