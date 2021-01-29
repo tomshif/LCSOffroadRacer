@@ -382,7 +382,15 @@ class GameScene: SKScene {
     
     func loadStartRaceScreen()
     {
-        var srTemp=SKSpriteNode(imageNamed: "srTemp")
+        
+        // TEMP Show which race # is starting
+        let tempRaceNum=SKLabelNode(text: "Race #: \(currentRaceSelected)")
+        tempRaceNum.position.y = size.height*0.25
+        tempRaceNum.fontSize=36
+        tempRaceNum.fontName="Chalkduster"
+        srAnchor.addChild(tempRaceNum)
+        
+        let srTemp=SKSpriteNode(imageNamed: "srTemp")
         srAnchor.addChild(srTemp)
         gameState=GAMESTATE.STARTRACE
         
