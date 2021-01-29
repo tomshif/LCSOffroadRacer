@@ -26,7 +26,8 @@ class GameScene: SKScene {
     
     var hudAnchor=SKSpriteNode()
     
-    var hud=HUDClass()
+    var theHud:HUDClass?
+    
     
     var cam=SKCameraNode()
     
@@ -164,7 +165,11 @@ class GameScene: SKScene {
                 {
                     changeGameState(to: GAMESTATE.UPGRADE)
                 }
-                
+                else if node.name == "startButton" && currentRaceSelected > 0
+                {
+                    changeGameState(to: GAMESTATE.STARTRACE)
+                    
+                }
                 
                 // frame currently selected race
                 if currentRaceSelected > 0 && gameState==GAMESTATE.CHOOSERACE
@@ -328,10 +333,18 @@ class GameScene: SKScene {
         // Temp image to go to upgrade
         let upButton=SKSpriteNode(imageNamed: "upTemp")
         upButton.name="upButton"
-        upButton.position.x = size.width*0.35
+        upButton.position.x = 0
         upButton.position.y = -size.height*0.35
         upButton.setScale(0.5)
         crAnchor.addChild(upButton)
+        
+        let startButton=SKSpriteNode(imageNamed: "cr_startButton")
+        startButton.name="startButton"
+        startButton.position.x = size.width*0.35
+        startButton.position.y = -size.height*0.35
+        startButton.setScale(0.5)
+        crAnchor.addChild(startButton)
+        
         
         gameState=GAMESTATE.CHOOSERACE
         
@@ -379,6 +392,7 @@ class GameScene: SKScene {
     
     func loadInRaceScreen()
     {
+        theHud=HUDClass()
         var irTemp=SKSpriteNode(imageNamed: "irTemp")
         irAnchor.addChild(irTemp)
         gameState=GAMESTATE.INRACE
@@ -423,21 +437,21 @@ class GameScene: SKScene {
             case GAMESTATE.CHOOSERACE:
                 if(to==GAMESTATE.STARTRACE)
                 {
-                    print("CR Node Count: \(crAnchor.children.count)")
+                    
                     crAnchor.removeAllChildren()
-                    print("CR Node Count: \(crAnchor.children.count)")
+                    
                     loadStartRaceScreen()
                 }
                 else if to==GAMESTATE.RACEPREVIEW
                 {
-                    print("CR Node Count: \(crAnchor.children.count)")
+                    
                     crAnchor.removeAllChildren()
-                    print("After - CR Node Count: \(crAnchor.children.count)")
+                    
                     loadRacePreviewScreen()
                 }
                 else if to==GAMESTATE.UPGRADE
                 {
-                    print("CR Node Count: \(crAnchor.children.count)")
+                    
                     crAnchor.removeAllChildren()
                     loadUpgradeScreen()
                 }
