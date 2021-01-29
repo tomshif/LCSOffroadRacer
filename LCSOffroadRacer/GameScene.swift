@@ -401,6 +401,7 @@ class GameScene: SKScene {
     func loadInRaceScreen()
     {
         theHud=HUDClass()
+        let map=MapClass(scene: self)
         var irTemp=SKSpriteNode(imageNamed: "irTemp")
         irAnchor.addChild(irTemp)
         gameState=GAMESTATE.INRACE
