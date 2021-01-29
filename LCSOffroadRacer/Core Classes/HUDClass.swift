@@ -12,6 +12,7 @@ import SpriteKit
 class HUDClass
 {
     // variables
+   
     var speedometer = SKSpriteNode()
     var speedometerNeedle = SKSpriteNode()
     var directionalArrow = SKSpriteNode()
@@ -73,3 +74,9 @@ func updateAll()
 //if -lastplacecheck.timeintervalsincenow > 1
 //
 //alpha = 50/15 for directional guide
+
+//initializer the scene
+//the scene variable
+//theScene!.hudAnchor.addChild()
+//
+//
