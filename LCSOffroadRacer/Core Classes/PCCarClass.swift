@@ -10,7 +10,7 @@ import SpriteKit
 class PCCarClass
 {
     // variables
-    var sprite = SKSpriteNode()
+    var sprite = SKSpriteNode(imageNamed: "car_black_1")
     var theScene : GameScene?
     var playerVector = CGVector()
     
