@@ -14,11 +14,19 @@ class PlayerClass
     var money:Int = 1
     var RaceEntered = SKSpriteNode()
     var carsDestroyed:Int = 1
-    
+    var RaceWon = SKSpriteNode()
+    var totalWinnings: Int = 1
+    var car = SKSpriteNode()
 
     // constants
 
 
+    func addMoney()
+    {
+        
+    }
+    
+    
     init()
     {
         
