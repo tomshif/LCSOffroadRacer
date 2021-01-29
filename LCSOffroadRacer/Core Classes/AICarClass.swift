@@ -30,24 +30,49 @@ class AICarClass
     let maxAICarTurnRate:Double = 10
     let maxAICarBrake:Double = 10
     
+    init(scene:GameScene)
+    {
+        
+    } // init
+    
     func goToFinishLine()
     {
         
-    } //func goToFinishLine
+    } // func goToFinishLine
     
     func slowDown()
     {
         
-    } //func slowDown
+    } // func slowDown
     
     func accelerate()
     {
         
-    } //func accelerate
+    } // func accelerate
     
-    init()
+    func turnLeft()
     {
         
-    }
+    } // func turnLeft
+    
+    func turnRight()
+    {
+        
+    } // func turnRight
+    
+    func goStragiht()
+    {
+        
+    } // func goStraight()
+    
+    func reverse()
+    {
+        
+    } // func reverse
+    
+    func update()
+    {
+        
+    } // func update()
 
 }
