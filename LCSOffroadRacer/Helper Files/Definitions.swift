@@ -50,3 +50,10 @@ struct PARTTYPE
 }
 
 
+struct keys {
+    // This struct is used to manage all key inputs that are repeated (for smooth input). This is NOT used for one off keypresses. 
+    var left:Bool=false
+    var right:Bool=false
+    var up:Bool=false
+    var down:Bool=false
+}

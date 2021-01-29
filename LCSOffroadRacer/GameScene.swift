@@ -38,12 +38,7 @@ class GameScene: SKScene {
     let tempCamSpeed:CGFloat = 5
     
     
-    struct keys {
-        var left:Bool=false
-        var right:Bool=false
-        var up:Bool=false
-        var down:Bool=false
-    }
+
     
     var keyPress=keys()
     
