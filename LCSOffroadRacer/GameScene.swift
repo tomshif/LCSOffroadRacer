@@ -35,9 +35,21 @@ class GameScene: SKScene {
     
     var currentRaceSelected:Int = -1
 
+    let tempCamSpeed:CGFloat = 5
+    
+    
+    struct keys {
+        var left:Bool=false
+        var right:Bool=false
+        var up:Bool=false
+        var down:Bool=false
+    }
+    
+    var keyPress=keys()
     
     override func didMove(to view: SKView) {
         
+       
         addChild(cam)
         self.camera=cam
         
@@ -238,16 +250,50 @@ class GameScene: SKScene {
     override func keyDown(with event: NSEvent) {
         switch event.keyCode {
 
+        case 0: // a
+            keyPress.left=true
+            
+        case 1: // s
+            keyPress.down=true
+            
+        case 2: // d
+            keyPress.right=true
+            
+        case 13: // w
+            keyPress.up=true
+            
         case 35: // P -- Testing Pop up Menus
             if (currentPopUp == nil)
             {
-                currentPopUp=PopUpClass(theScene: self, popType: POPTYPE.INFO, parentNode: puAnchor, popText: "This is a test Pop up")
+                currentPopUp=PopUpClass(theScene: self, popType: POPTYPE.YESNO, parentNode: puAnchor, popText: "This is a test Pop up")
             }
             
         default:
             print("keyDown: \(event.characters!) keyCode: \(event.keyCode)")
         } // switch keyCode
     } // keyDown
+    
+    
+    override func keyUp(with event: NSEvent) {
+        switch event.keyCode {
+            
+        case 0:
+            keyPress.left=false
+            
+        case 1:
+            keyPress.down=false
+            
+        case 2:
+            keyPress.right=false
+
+        case 13:
+            keyPress.up=false
+            
+        default:
+            break
+        } // switch keyCode
+    } // keyUp
+    
     
     func loadStartUp()
     {
@@ -402,8 +448,9 @@ class GameScene: SKScene {
     {
         theHud=HUDClass()
         let map=MapClass(scene: self)
-        var irTemp=SKSpriteNode(imageNamed: "irTemp")
-        irAnchor.addChild(irTemp)
+        
+        // var irTemp=SKSpriteNode(imageNamed: "irTemp")
+        // irAnchor.addChild(irTemp)
         gameState=GAMESTATE.INRACE
         
     } // loadInRaceScreen
@@ -512,6 +559,26 @@ class GameScene: SKScene {
         
     } // func changeGameState
     
+    func checkKeysinRace()
+    {
+        if keyPress.left
+        {
+            cam.position.x -= tempCamSpeed
+        }
+        if keyPress.right
+        {
+            cam.position.x += tempCamSpeed
+        }
+        if keyPress.up
+        {
+            cam.position.y += tempCamSpeed
+        }
+        if keyPress.down
+        {
+            cam.position.y -= tempCamSpeed
+        }
+    }
+    
     override func update(_ currentTime: TimeInterval) {
         // Called before each frame is rendered
         
@@ -519,6 +586,9 @@ class GameScene: SKScene {
         {
         case GAMESTATE.MAINMENU:
             break
+            
+        case GAMESTATE.INRACE:
+            checkKeysinRace()
             
         default:
             //print("Invalid gameState in update()")
