@@ -20,12 +20,20 @@ class AICarClass
     var AICarTurnRate:Double = 0
     var AICarAcceleration:Double = 0
     var AICarVector = CGVector()
+    
+    //var isAccelearting:bool = false
+    //var isBraking:bool = false
 
     // constants
     let maxAICarSpeed:Double = 300
     let maxAICarEnginePower:Double = 300
     let maxAICarTurnRate:Double = 10
-
+    
+    func pursuePlayer()
+    {
+        
+    }
+    
     init()
     {
         
