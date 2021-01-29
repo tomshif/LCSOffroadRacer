@@ -84,8 +84,13 @@ class PCCarClass
         sprite.position.y += playerVector.dy
         
         if !isAccelerating {
-            currentSpeed -= traction*tires
-        } //if not accelerating / ensures the player will always slow down unless they want to move
+            if currentSpeed > 0 {
+                currentSpeed -= traction*tires
+            } // if currentSpeed > 0 / car must be moving to slow down
+            if currentSpeed < 0 {
+                currentSpeed += traction*tires
+            }// if currentSpeed < 0 / car must be moving to slow down
+        } //if not accelerating  / ensures the player will always slow down unless they want to move
     } //public func updatePlayer() / updates player stats and movement
   */
  
