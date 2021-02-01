@@ -601,6 +601,8 @@ class GameScene: SKScene {
             {
                 playerCar!.update()
             }
+            cam.position = playerCar!.sprite.position
+            
         default:
             //print("Invalid gameState in update()")
             break
