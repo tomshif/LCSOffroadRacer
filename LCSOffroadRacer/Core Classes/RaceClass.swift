@@ -12,12 +12,14 @@ class RaceClass
 {
     var theScene:GameScene?
     
+    var tileWidth:Int = 128
+    var mapWidth:Int = 128
+    var tileHeight:Int = 128
+    var mapHeight:Int = 128
+    
     var currentRank:Int = 1
     
     var isRacing:Bool = true
-    
-    var start = CGPoint()
-    var finish = CGPoint()
     
     var easyCarAmount:Int = 3
     var medCarAmount:Int = 5
@@ -61,13 +63,22 @@ class RaceClass
     let easyThirdPlaceMoney:Int = 5
     // constants
 
-    func createMap()
+    func createCheckpoints()
     {
-        func createCheckpoints()
+        var startX = random(min: -64, max: 64)
+        if startX < 0
         {
-            
-        } // func createCheckpoints
-    } // func createMap
+            var endX = random(min: 16, max: 64)
+        }// if the start is on the left side put the end on the right side
+        if startX > 0
+        {
+            var endX = random(min: -16, max: -64)
+        } // if the start is on the right side put the end on the left side
+        
+        var startY = random(min: 32, max: 64)
+        var endY = random(min: -16, max: -32)
+    
+    } // func createCheckpoints
     
     func raceStats()
     {
@@ -128,9 +139,7 @@ class RaceClass
     init(MMR:Int, scene:GameScene)
     {
         theScene = scene
-        
-        
-        
+        createCheckpoints()
     } // init
 
 } // RaceClass
