@@ -32,7 +32,7 @@ class AICarClass
     
     init(scene:GameScene)
     {
-        //theScene:scene
+        theScene = scene
     } // init
     
     func goToFinishLine()
@@ -75,4 +75,4 @@ class AICarClass
         
     } // func update()
 
-}
+} // class AICarClass
