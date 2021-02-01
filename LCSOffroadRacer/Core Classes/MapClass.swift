@@ -49,6 +49,7 @@ class MapClass
                     posY = -64 * tileWidth + tileWidth * CGFloat(y)
                     let temptile=SKSpriteNode(imageNamed: "grass01")
                     temptile.position=CGPoint(x: posX, y: posY)
+                    temptile.zPosition = -100
                     theScene!.irAnchor.addChild(temptile)
                 }//for x
             }//for y
@@ -61,11 +62,8 @@ class MapClass
     
     init()
     {
-      
+      // This initializer should never be used
                   
-              
-
-        
     
     }
 

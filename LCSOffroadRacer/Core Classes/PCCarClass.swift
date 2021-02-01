@@ -77,7 +77,7 @@ class PCCarClass
         } // if currentSpeed <= 0 and < -speed*engine / car must be stopped or already in reverse, plus lower than negative max speed
      } // public func reverseSpeed() / either stops the car or puts it in reverse
      
-    public func updatePlayer() {
+    public func update() {
         let dx = cos(sprite.zRotation)*currentSpeed/60
         let dy = sin(sprite.zRotation)*currentSpeed/60
         

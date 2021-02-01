@@ -37,7 +37,7 @@ class GameScene: SKScene {
 
     let tempCamSpeed:CGFloat = 5
     
-    
+    var playerCar:PCCarClass?
 
     
     var keyPress=keys()
@@ -441,8 +441,9 @@ class GameScene: SKScene {
     
     func loadInRaceScreen()
     {
-        theHud=HUDClass()
+        theHud=HUDClass(scene: self)
         let map=MapClass(scene: self)
+        playerCar=PCCarClass(mmr: 0, scene: self)
         
         // var irTemp=SKSpriteNode(imageNamed: "irTemp")
         // irAnchor.addChild(irTemp)
@@ -558,21 +559,33 @@ class GameScene: SKScene {
     {
         if keyPress.left
         {
-            cam.position.x -= tempCamSpeed
+            if(playerCar != nil)
+            {
+                playerCar!.turnLeft()
+            }
         }
         if keyPress.right
         {
-            cam.position.x += tempCamSpeed
+            if(playerCar != nil)
+            {
+                playerCar!.turnRight()
+            }
         }
         if keyPress.up
         {
-            cam.position.y += tempCamSpeed
+            if(playerCar != nil)
+            {
+                playerCar!.speedUp()
+            }
         }
         if keyPress.down
         {
-            cam.position.y -= tempCamSpeed
+            if(playerCar != nil)
+            {
+                playerCar!.reverseSpeed()
+            }
         }
-    }
+    } // checkKeysinRace()
     
     override func update(_ currentTime: TimeInterval) {
         // Called before each frame is rendered
@@ -584,7 +597,10 @@ class GameScene: SKScene {
             
         case GAMESTATE.INRACE:
             checkKeysinRace()
-            
+            if playerCar != nil
+            {
+                playerCar!.update()
+            }
         default:
             //print("Invalid gameState in update()")
             break
