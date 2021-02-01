@@ -11,6 +11,7 @@ import SpriteKit
 class PlayerClass
 {
     // variables
+    var theScene:GameScene?
     var money:Int = 1
     var RaceEntered = SKSpriteNode()
     var carsDestroyed:Int = 1
@@ -27,9 +28,9 @@ class PlayerClass
     }
     
     
-    init()
+    init(MMR:Int, scene:GameScene)
     {
-        
-    }
+        theScene = scene
+    } //init
 
 }
