@@ -28,14 +28,18 @@ class PCCarClass
     var rotation:CGFloat = 0
     
     // constants
-
+    
+    let UPGRADEFILLER:CGFloat = 1 // used to fill in values until upgrades are ready
     
     // booleans
     var isAccelerating = false
-    /*
+
     init(mmr: Int, scene: GameScene) {
         theScene = scene
         theScene!.irAnchor.addChild(sprite)
+        sprite.zPosition = 3
+        sprite.position.x = 0
+        sprite.position.y = 0
      } // init(scene: GameScene) / initializes the scene
      
     public func updateStats() {
@@ -43,33 +47,33 @@ class PCCarClass
     } //public func updateStats() / determines part ratings
      
     public func speedUp() {
-        if currentSpeed < speed*speed*engine {
-            currentSpeed += acceleration*gearbox
-            currentSpeed += (traction*tires)/60
+        if currentSpeed < speed*speed*UPGRADEFILLER {
+            currentSpeed += acceleration*UPGRADEFILLER
+            currentSpeed += (traction*UPGRADEFILLER)/60
             isAccelerating = true
         } // if currentSpeed is less than speed squared x engine / car cannot accelerate beyond max speed
     } //public func speedUp() / accelerates car
     
     public func turnLeft() {
         if currentSpeed > 1 {
-            sprite.zPosition += turning*axle
-            sprite.zPosition += (traction*tires)/60
+            sprite.zPosition += turning*UPGRADEFILLER
+            sprite.zPosition += (traction*UPGRADEFILLER)/60
         } //if currentSpeed > 1 / car must be moving to turn
     } //public func turnLeft() / turns car left
 
     public func turnRight() {
         if currentSpeed > 1 {
-            sprite.zPosition -= turning*axle
-            sprite.zPosition -= (traction*tires)/60
+            sprite.zPosition -= turning*UPGRADEFILLER
+            sprite.zPosition -= (traction*UPGRADEFILLER)/60
         } //if currentSpeed > 1 / car must be moving to turn
     } //public func turnRight() / turns car right
      
      public func reverseSpeed() {
         if currentSpeed > 0 {
-            currentSpeed -= traction*tires
+            currentSpeed -= traction*UPGRADEFILLER
         } //if currentSpeed > 0  / car must be moving forward
-        if currentSpeed <= 0 && currentSpeed < -speed*engine {
-            currentSpeed -= acceleration*gearbox
+        if currentSpeed <= 0 && currentSpeed < -speed*UPGRADEFILLER {
+            currentSpeed -= acceleration*UPGRADEFILLER
         } // if currentSpeed <= 0 and < -speed*engine / car must be stopped or already in reverse, plus lower than negative max speed
      } // public func reverseSpeed() / either stops the car or puts it in reverse
      
@@ -85,14 +89,14 @@ class PCCarClass
         
         if !isAccelerating {
             if currentSpeed > 0 {
-                currentSpeed -= traction*tires
+                currentSpeed -= traction*UPGRADEFILLER
             } // if currentSpeed > 0 / car must be moving to slow down
             if currentSpeed < 0 {
-                currentSpeed += traction*tires
+                currentSpeed += traction*UPGRADEFILLER
             }// if currentSpeed < 0 / car must be moving to slow down
         } //if not accelerating  / ensures the player will always slow down unless they want to move
     } //public func updatePlayer() / updates player stats and movement
-  */
+
  
     init() {
         
