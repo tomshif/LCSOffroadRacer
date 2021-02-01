@@ -52,7 +52,7 @@ class MapClass
                     temptile.zPosition = -100
                     theScene!.irAnchor.addChild(temptile)
                 }//for x
-            }//for y
+             }//for y
         }//mapPosition()
 
             mapPosition()
