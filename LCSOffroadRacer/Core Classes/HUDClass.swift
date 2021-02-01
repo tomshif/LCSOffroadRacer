@@ -12,7 +12,7 @@ import SpriteKit
 class HUDClass
 {
     // variables
-   
+    var theScene:GameScene?
     var speedometer = SKSpriteNode()
     var speedometerNeedle = SKSpriteNode()
     var directionalArrow = SKSpriteNode()
@@ -62,9 +62,9 @@ func updateAll()
     
 } // updateAll
     
-    init()
+    init(scene:GameScene)
     {
-        
+        theScene = scene
     } // Initializer
     
 } // HUDClass
