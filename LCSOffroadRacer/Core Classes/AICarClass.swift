@@ -11,8 +11,8 @@ import SpriteKit
 class AICarClass
 {
     // variables
-    var AICarSprite = SKSpriteNode()
-    var theScene = GameScene()
+    var AICarSprite = SKSpriteNode(imageNamed: "car_blue_1")
+    var theScene:GameScene?
     
     var AICarSpeed:Double = 0
     var AICarEnginePower:Double = 0
@@ -32,7 +32,7 @@ class AICarClass
     
     init(scene:GameScene)
     {
-        
+        //theScene:scene
     } // init
     
     func goToFinishLine()
