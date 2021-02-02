@@ -17,18 +17,23 @@ class PlayerClass
     var carsDestroyed:Int = 1
     var RaceWon = SKSpriteNode()
     var totalWinnings: Int = 1
-    var car = SKSpriteNode()
+    var car:PCCarClass?
 
     // constants
 
 
-    func addMoney()
+    func addMoney(amount:Int)
     {
-        
+        money += amount
+    }
+    
+    func spendMoney(amount:Int)
+    {
+        money -= amount
     }
     
     
-    init(MMR:Int, scene:GameScene)
+    init (scene:GameScene)
     {
         theScene = scene
     } //init
