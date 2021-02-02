@@ -14,8 +14,6 @@ class RaceClass
     
     var tileWidth:Int = 128
     var mapWidth:Int = 128
-    var tileHeight:Int = 128
-    var mapHeight:Int = 128
     
     var currentRank:Int = 1
     
@@ -65,6 +63,8 @@ class RaceClass
 
     func createCheckpoints()
     {
+        var mapSize = tileWidth*mapWidth
+        
         var startX = random(min: -64, max: 64)
         if startX < 0
         {
