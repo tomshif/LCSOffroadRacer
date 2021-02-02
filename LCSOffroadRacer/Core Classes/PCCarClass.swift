@@ -14,10 +14,10 @@ class PCCarClass
     var theScene : GameScene?
     var playerVector = CGVector()
     
-    var speed:CGFloat = 10
-    var turning:CGFloat = 10
-    var traction:CGFloat = 10
-    var acceleration:CGFloat = 10
+    var speed:CGFloat = 0.5
+    var turning:CGFloat = 0.1
+    var traction:CGFloat = 1
+    var acceleration:CGFloat = 0.5
 
     var engine=PartClass() // affects speed
     var axle=PartClass() // affects turning
@@ -27,13 +27,18 @@ class PCCarClass
     var currentSpeed:CGFloat = 0
     var rotation:CGFloat = 0
     
+    var dx:CGFloat = 0
+    var dy:CGFloat = 0
+    
     // constants
     
     let UPGRADEFILLER:CGFloat = 1 // used to fill in values until upgrades are ready
+    let MOVEMENTVALUE:CGFloat = 0.5 // a value used when a check is made to see if the car is moving
     
     // booleans
-    var isAccelerating = false
+    
 
+    
     init(mmr: Int, scene: GameScene) {
         theScene = scene
         theScene!.irAnchor.addChild(sprite)
@@ -50,51 +55,44 @@ class PCCarClass
         if currentSpeed < speed*speed*UPGRADEFILLER {
             currentSpeed += acceleration*UPGRADEFILLER
             currentSpeed += (traction*UPGRADEFILLER)/60
-            isAccelerating = true
+            
+            dx = cos(sprite.zRotation)*currentSpeed/60
+            dy = sin(sprite.zRotation)*currentSpeed/60
+            
+            playerVector.dx += dx
+            playerVector.dy += dy
         } // if currentSpeed is less than speed squared x engine / car cannot accelerate beyond max speed
     } //public func speedUp() / accelerates car
     
     public func turnLeft() {
-        if currentSpeed > 1 {
-            sprite.zPosition += turning*UPGRADEFILLER
-            sprite.zPosition += (traction*UPGRADEFILLER)/60
-        } //if currentSpeed > 1 / car must be moving to turn
+        sprite.zRotation += ((turning*UPGRADEFILLER)+(traction*UPGRADEFILLER)/60)*currentSpeed
     } //public func turnLeft() / turns car left
 
     public func turnRight() {
-        if currentSpeed > 1 {
-            sprite.zPosition -= turning*UPGRADEFILLER
-            sprite.zPosition -= (traction*UPGRADEFILLER)/60
-        } //if currentSpeed > 1 / car must be moving to turn
+        sprite.zRotation -= ((turning*UPGRADEFILLER)+(traction*UPGRADEFILLER)/60)*currentSpeed
     } //public func turnRight() / turns car right
      
      public func reverseSpeed() {
-        if currentSpeed > 0 {
-            currentSpeed -= traction*UPGRADEFILLER
-        } //if currentSpeed > 0  / car must be moving forward
-        if currentSpeed <= 0 && currentSpeed < -speed*UPGRADEFILLER {
-            currentSpeed -= acceleration*UPGRADEFILLER
-        } // if currentSpeed <= 0 and < -speed*engine / car must be stopped or already in reverse, plus lower than negative max speed
+        currentSpeed -= traction*UPGRADEFILLER
+        
+        dx = cos(sprite.zRotation)*currentSpeed/60
+        dy = sin(sprite.zRotation)*currentSpeed/60
+        
+        playerVector.dx += dx
+        playerVector.dy += dy
      } // public func reverseSpeed() / either stops the car or puts it in reverse
      
     public func update() {
-        let dx = cos(sprite.zRotation)*currentSpeed/60
-        let dy = sin(sprite.zRotation)*currentSpeed/60
-        
+        dx = cos(sprite.zRotation)*currentSpeed/60
+        dy = sin(sprite.zRotation)*currentSpeed/60
+            
         playerVector.dx += dx
         playerVector.dy += dy
         
         sprite.position.x += playerVector.dx
         sprite.position.y += playerVector.dy
         
-        if !isAccelerating {
-            if currentSpeed > 0 {
-                currentSpeed -= traction*UPGRADEFILLER
-            } // if currentSpeed > 0 / car must be moving to slow down
-            if currentSpeed < 0 {
-                currentSpeed += traction*UPGRADEFILLER
-            }// if currentSpeed < 0 / car must be moving to slow down
-        } //if not accelerating  / ensures the player will always slow down unless they want to move
+        currentSpeed *= 0.000009
     } //public func updatePlayer() / updates player stats and movement
 
  
