@@ -15,6 +15,9 @@ class RaceClass
     var tileWidth:Int = 128
     var mapWidth:Int = 128
     
+    var start = CGFloat()
+    var end = CGFloat()
+    
     var currentRank:Int = 1
     
     var isRacing:Bool = true
@@ -30,7 +33,6 @@ class RaceClass
     var isStorming:Bool = false
     
     var startTime = NSDate()
-    var currentTime = NSDate()
     var endTime = NSDate()
     
     var isEasy1:Bool = false
@@ -65,18 +67,25 @@ class RaceClass
     {
         var mapSize = tileWidth*mapWidth
         
-        var startX = random(min: -64, max: 64)
+        var startX = random(min: -3712, max: 3712)
         if startX < 0
         {
-            var endX = random(min: 16, max: 64)
+            var endX = random(min: 328, max: 3328)
         }// if the start is on the left side put the end on the right side
         if startX > 0
         {
-            var endX = random(min: -16, max: -64)
+            var endX = random(min: -328, max: -3328)
         } // if the start is on the right side put the end on the left side
         
-        var startY = random(min: 32, max: 64)
-        var endY = random(min: -16, max: -32)
+        var startY = random(min: -3712, max: 3712)
+        if startY < 0
+        {
+            var endY = random(min: 328, max: 3328)
+        }// if the start is on the bottom side put the end on the top
+        if startY > 0
+        {
+            var endY = random(min: -328, max: -3328)
+        } // if the start is on the top put the end on the bottom
     
     } // func createCheckpoints
     
