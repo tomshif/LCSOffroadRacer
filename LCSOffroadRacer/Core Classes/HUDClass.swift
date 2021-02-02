@@ -62,10 +62,15 @@ func updateAll()
     
 } // updateAll
     
-    init(scene:GameScene)
-    {
-        theScene = scene
-    } // Initializer
+init(scene:GameScene)
+{
+    theScene = scene
+    currentTimer.position = CGPoint(x: theScene!.size.width*0.4, y: theScene!.size.height*0.4)
+    currentTimer.text="Timer"
+    currentTimer.zPosition=1501
+    theScene!.hudAnchor.addChild(currentTimer)
+    
+} // Initializer
     
 } // HUDClass
 
