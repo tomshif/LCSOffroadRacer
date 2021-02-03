@@ -15,8 +15,8 @@ class RaceClass
     var tileWidth:Int = 128
     var mapWidth:Int = 128
     
-    var start = CGFloat()
-    var end = CGFloat()
+    var start = CGPoint()
+    var end = CGPoint()
     
     var currentRank:Int = 1
     
