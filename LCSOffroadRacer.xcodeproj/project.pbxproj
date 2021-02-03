@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BFD29B4B25CAEBE2003670AC /* mapTest.sks in Resources */ = {isa = PBXBuildFile; fileRef = BFD29B4A25CAEBE2003670AC /* mapTest.sks */; };
 		E2524F6925B7565E006EE73C /* AICarClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2524F6025B7565D006EE73C /* AICarClass.swift */; };
 		E2524F6A25B7565E006EE73C /* PCCarClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2524F6125B7565D006EE73C /* PCCarClass.swift */; };
 		E2524F6B25B7565E006EE73C /* PopUpClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2524F6225B7565D006EE73C /* PopUpClass.swift */; };
@@ -29,6 +30,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BFD29B4A25CAEBE2003670AC /* mapTest.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = mapTest.sks; sourceTree = "<group>"; };
 		E2524F6025B7565D006EE73C /* AICarClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AICarClass.swift; sourceTree = "<group>"; };
 		E2524F6125B7565D006EE73C /* PCCarClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PCCarClass.swift; sourceTree = "<group>"; };
 		E2524F6225B7565D006EE73C /* PopUpClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopUpClass.swift; sourceTree = "<group>"; };
@@ -86,6 +88,7 @@
 				E255CBCB25CAE630009E252B /* RaceNames.txt */,
 				E2524F7825B756B7006EE73C /* Definitions.swift */,
 				E2524F7925B756B7006EE73C /* random.swift */,
+				BFD29B4A25CAEBE2003670AC /* mapTest.sks */,
 			);
 			path = "Helper Files";
 			sourceTree = "<group>";
@@ -210,6 +213,7 @@
 				E255CBCC25CAE631009E252B /* RaceNames.txt in Resources */,
 				F42ED01525B754BD00EAB698 /* Assets.xcassets in Resources */,
 				F42ED00F25B754BA00EAB698 /* Actions.sks in Resources */,
+				BFD29B4B25CAEBE2003670AC /* mapTest.sks in Resources */,
 				F42ED01825B754BD00EAB698 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
