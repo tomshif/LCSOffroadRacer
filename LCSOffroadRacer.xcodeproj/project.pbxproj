@@ -18,6 +18,7 @@
 		E2524F7125B7565E006EE73C /* PlayerClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2524F6825B7565D006EE73C /* PlayerClass.swift */; };
 		E2524F7A25B756B7006EE73C /* Definitions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2524F7825B756B7006EE73C /* Definitions.swift */; };
 		E2524F7B25B756B7006EE73C /* random.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2524F7925B756B7006EE73C /* random.swift */; };
+		E255CBCC25CAE631009E252B /* RaceNames.txt in Resources */ = {isa = PBXBuildFile; fileRef = E255CBCB25CAE630009E252B /* RaceNames.txt */; };
 		F42ED00B25B754BA00EAB698 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F42ED00A25B754BA00EAB698 /* AppDelegate.swift */; };
 		F42ED00D25B754BA00EAB698 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = F42ED00C25B754BA00EAB698 /* GameScene.sks */; };
 		F42ED00F25B754BA00EAB698 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = F42ED00E25B754BA00EAB698 /* Actions.sks */; };
@@ -39,6 +40,7 @@
 		E2524F6825B7565D006EE73C /* PlayerClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerClass.swift; sourceTree = "<group>"; };
 		E2524F7825B756B7006EE73C /* Definitions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Definitions.swift; sourceTree = "<group>"; };
 		E2524F7925B756B7006EE73C /* random.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = random.swift; sourceTree = "<group>"; };
+		E255CBCB25CAE630009E252B /* RaceNames.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = RaceNames.txt; sourceTree = "<group>"; };
 		F42ED00725B754BA00EAB698 /* LCSOffroadRacer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LCSOffroadRacer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F42ED00A25B754BA00EAB698 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F42ED00C25B754BA00EAB698 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -81,6 +83,7 @@
 		E2524F7725B756AD006EE73C /* Helper Files */ = {
 			isa = PBXGroup;
 			children = (
+				E255CBCB25CAE630009E252B /* RaceNames.txt */,
 				E2524F7825B756B7006EE73C /* Definitions.swift */,
 				E2524F7925B756B7006EE73C /* random.swift */,
 			);
@@ -204,6 +207,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F42ED00D25B754BA00EAB698 /* GameScene.sks in Resources */,
+				E255CBCC25CAE631009E252B /* RaceNames.txt in Resources */,
 				F42ED01525B754BD00EAB698 /* Assets.xcassets in Resources */,
 				F42ED00F25B754BA00EAB698 /* Actions.sks in Resources */,
 				F42ED01825B754BD00EAB698 /* Main.storyboard in Resources */,

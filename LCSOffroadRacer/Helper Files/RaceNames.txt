@@ -1,0 +1,13 @@
+# First line is locations
+# Second line is "second name" races (Rally, Grand Prix, etc)
+# Third Line is "first name" races (Grand Prix of, Offroad Challenge at, etc)
+# Lines that begin with # are comments
+# All entries must be separated with comma
+# Do not use quotation marks anywhere
+
+#Locations
+
+# Second Name
+
+
+# First Name
