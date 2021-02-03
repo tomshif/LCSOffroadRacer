@@ -24,7 +24,7 @@ class GameClass
     
     func loadNameLists() -> String!
     {
-        guard let filepath = Bundle.main.path(forResource: "AchievementList", ofType: "txt")
+        guard let filepath = Bundle.main.path(forResource: "RaceNames", ofType: "txt")
         else
         {
             print("Error opening file")
@@ -45,25 +45,77 @@ class GameClass
         var lineNum:Int=0
         for line in lines
         {
-            let columns = line.split(separator: ",")
-            
-            for col in columns
+            if line.prefix(1) != "#"
             {
-                locationList.append(String(col))
-            }
             
+                let columns = line.split(separator: ",")
+                
+                if(lineNum==0)
+                {
+                    for col in columns
+                    {
+                        locationList.append(String(col))
+                    }
+                } // if locations
+                
+                if (lineNum==1)
+                {
+                    for col in columns
+                    {
+                        lastNameList.append(String(col))
+                    }
+                }
+                if(lineNum==2)
+                {
+                    for col in columns
+                    {
+                        firstNameList.append(String(col))
+                    }
+                }
+                lineNum += 1
+            } // if not a comment
         } // for each line
-        print(locationList)
+        
 
         
         
         
         return nil
             
-    } // loadAchievements
+    } // loadNameLists
+    
+    func generateName() -> String
+    {
+        var retName:String = ""
+        let firstLastChance=random(min: 0, max: 1)
+        
+        // pick location
+        let locSlot=Int(random(min: 0, max: CGFloat(locationList.count)))
+        let locName=locationList[locSlot]
+        
+        
+        if firstLastChance > 0.5
+        {
+            let firstSlot=Int(random(min: 0, max: CGFloat(firstNameList.count)))
+            retName = "\(firstNameList[firstSlot]) \(locName)"
+            
+        }
+        else
+        {
+
+            let lastSlot=Int(random(min: 0, max: CGFloat(lastNameList.count)))
+            retName = "\(locName) \(lastNameList[lastSlot])"
+
+        }
+        
+        return retName
+    
+    } // generateName
+    
     init()
     {
-        
+        loadNameLists()
+        print(generateName())
     }
 
 }
