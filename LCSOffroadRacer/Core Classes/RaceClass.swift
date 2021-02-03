@@ -18,6 +18,9 @@ class RaceClass
     var start = CGPoint()
     var end = CGPoint()
     
+    var endX:CGFloat = 0
+    var endY:CGFloat = 0
+    
     var currentRank:Int = 1
     
     var isRacing:Bool = true
@@ -70,7 +73,7 @@ class RaceClass
         var startX = random(min: -3712, max: 3712)
         if startX < 0
         {
-            var endX = random(min: 328, max: 3328)
+            endX = random(min: 328, max: 3328)
         }// if the start is on the left side put the end on the right side
         if startX > 0
         {
@@ -87,6 +90,11 @@ class RaceClass
             var endY = random(min: -328, max: -3328)
         } // if the start is on the top put the end on the bottom
     
+        start.x = startX
+        start.y = startY
+        end.x = endX
+        end.y = endY
+        
     } // func createCheckpoints
     
     func raceStats()
