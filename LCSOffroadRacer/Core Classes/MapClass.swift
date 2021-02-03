@@ -68,14 +68,11 @@ class MapClass
             mapPosition()
          
          topLayer = SKTileMapNode(tileSet: tileSet, columns: columns, rows: rows, tileSize: tileSize)
-         
-
-         // make SpriteKit do the work of placing specific tiles
          topLayer.enableAutomapping = true
-         
-         // add the grass/water layer to our main map node
          map.addChild(topLayer)
          
+        
+        //create the noisemap
         
           func makeNoiseMap(columns: Int, rows: Int) -> GKNoiseMap {
               
@@ -91,15 +88,15 @@ class MapClass
               let sampleCount = vector2(Int32(columns), Int32(rows))
               
               return GKNoiseMap(noise, size: size, origin: origin, sampleCount: sampleCount, seamless: true)
-          }
+          }//noiseMap
           
           let noiseMap = makeNoiseMap(columns: columns, rows: rows)
           let mapT=SKTexture(noiseMap: noiseMap)
           mapTex=SKSpriteNode(texture: mapT)
 
-        
-         // create the noise map
          
+        //different tiles depending on terrain height
+        
          for column in 0 ..< columns {
              for row in 0 ..< rows {
                  let location = vector2(Int32(row), Int32(column))
@@ -113,9 +110,8 @@ class MapClass
                  else if terrainHeight < 1 && terrainHeight > 0.5{
                      topLayer.setTileGroup(sandTiles, forColumn: column, row: row)
                  }
-             }
-         }
-         // return animated tiles in a single layer
+             }//for rows
+         }//for columns
         
                 
         
