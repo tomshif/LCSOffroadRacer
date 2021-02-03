@@ -11,7 +11,7 @@ import SpriteKit
 class GameClass
 {
     // variables
-
+    var AICarList=[AICarClass]()
     
 
     // constants

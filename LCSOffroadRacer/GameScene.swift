@@ -38,9 +38,12 @@ class GameScene: SKScene {
     let tempCamSpeed:CGFloat = 5
     
     var playerCar:PCCarClass?
-
+    var trackAICar:Bool=false
+    
+    var theGame:GameClass?
     
     var keyPress=keys()
+    
     
     override func didMove(to view: SKView) {
         
@@ -257,6 +260,8 @@ class GameScene: SKScene {
         case 13: // w
             keyPress.up=true
             
+        case 29: // 0 -- Temp Track AI Car
+            trackAICar.toggle()
         case 35: // P -- Testing Pop up Menus
             if (currentPopUp == nil)
             {
@@ -444,6 +449,12 @@ class GameScene: SKScene {
         theHud=HUDClass(scene: self)
         let map=MapClass(scene: self)
         playerCar=PCCarClass(mmr: 0, scene: self)
+        theGame=GameClass()
+        
+        // TEMP Add single AI Car to game
+        let tempCar=AICarClass(scene: self)
+        theGame!.AICarList.append(tempCar)
+        
         
         // var irTemp=SKSpriteNode(imageNamed: "irTemp")
         // irAnchor.addChild(irTemp)
@@ -601,8 +612,14 @@ class GameScene: SKScene {
             {
                 playerCar!.update()
             }
-            cam.position = playerCar!.sprite.position
-            
+            if(trackAICar)
+            {
+                cam.position=theGame!.AICarList[0].AICarSprite.position
+            }
+            else
+            {
+                cam.position = playerCar!.sprite.position
+            }
         default:
             //print("Invalid gameState in update()")
             break
