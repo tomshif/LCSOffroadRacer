@@ -5,8 +5,8 @@
 # All entries must be separated with comma
 # Do not use quotation marks anywhere
 #Locations
-Dakar,Paris,Barcelona,Moscow,Dubai,Mumbai,Hong Kong,Fort Worth,Texas,San Diego,Brazil,Argentina,St. Tropez,Jamaica,Mexico City,Tegucigalpa,Buenos Aires,Lisbon,Japan,Shanghai,Isle of Skye,Palau,New Zealand,Santorini,Ha Long Bay,St. Lucia,Yellowstone,Panjin,Beijing,Jordan,Bangkok,Pamukkale,Bora Bora,Mù Cang Chải,Torres del Paine,Krabi,Bagan,Fernando de Noronha,Cape Town,Sossusvlei,El Yunque,Zlatni Rat,The Lofoten Islands,Miho no Matsubara,Isla Holbox,Iguazú Falls,Giza,Marrakesh,Tahiti,Maui,Phuket,Bali,Madagascar,St. Petersburg,Paracas,Algarve,Sarakiniko Beach,Death Valley,Provence,Bayon,Mongolia,Copenhagen,Svalbard,Lamu,Wulingyuan,Havana,Kyoto,Marrakech,Jerusalem,The Philippines 
+Dakar,Paris,Barcelona,Moscow,Dubai,Mumbai,Hong Kong,Fort Worth,Texas,San Diego,Brazil,Argentina,St. Tropez,Jamaica,Mexico City,Tegucigalpa,Buenos Aires,Lisbon,Japan,Shanghai,Isle of Skye,Palau,New Zealand,Santorini,Ha Long Bay,St. Lucia,Yellowstone,Panjin,Beijing,Jordan,Bangkok,Pamukkale,Bora Bora,Mù Cang Chải,Torres del Paine,Krabi,Bagan,Fernando de Noronha,Cape Town,Sossusvlei,El Yunque,Zlatni Rat,The Lofoten Islands,Miho no Matsubara,Isla Holbox,Iguazú Falls,Giza,Marrakesh,Tahiti,Maui,Phuket,Bali,Madagascar,St. Petersburg,Paracas,Algarve,Sarakiniko Beach,Death Valley,Provence,Bayon,Mongolia,Copenhagen,Svalbard,Lamu,Wulingyuan,Havana,Kyoto,Marrakech,Jerusalem,The Philippines,Zimbabwe
 # Second Name
-Rally,Challenge,Grand Prix,Championship,100K Challenge,100K,1000
+Rally,Challenge,Grand Prix,Championship,100K Challenge,100K,1000,500,GP,Run,Marathon
 # First Name
-The Rally of,The Grand Prix at, The Challenge in,Rally,The Race at
+The Rally of,The Grand Prix at, The Challenge in,Rally,The Race at,The Offroad Challenge of,24 Hours of,
