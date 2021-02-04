@@ -115,6 +115,11 @@ class RaceClass
         
     } // func raceRewards
     
+    func DecideMMR()
+    {
+        
+    }
+    
     func difficulty()
     {
         
