@@ -19,22 +19,38 @@ class AICarClass
     var AICarTraction:CGFloat = 0
     var AICarTurnRate:CGFloat = 0
     var AICarAcceleration:CGFloat = 0
+    
     var AICarVector = CGVector()
+    var AICarDx:CGFloat = 0
+    var AICarDy:CGFloat = 0
+    
+    var finishLineDx:CGFloat = 0
+    var finishLineDy:CGFloat = 0
     
     var isAccelearting:Bool = false
     var isBraking:Bool = false
 
     // constants
-    let maxAICarSpeed:Double = 300
-    let maxAICarEnginePower:Double = 300
-    let maxAICarTurnRate:Double = 10
-    let maxAICarBrake:Double = 10
+    let maxAICarSpeed:CGFloat = 300
+    let maxAICarEnginePower:CGFloat = 300
+    let maxAICarTurnRate:CGFloat = 10
+    let maxAICarBrake:CGFloat = 10
     
     init(scene:GameScene)
     {
         theScene = scene
         theScene!.irAnchor.addChild(AICarSprite)
+        
+        AICarSprite.zPosition = 4
+        AICarSprite.position.x = AICarDx
+        AICarSprite.position.y = AICarDy
     } // init
+    
+    func pickRandomEndLine()
+    {
+        finishLineDx = random(min: -8192, max: 8192)
+        finishLineDy = random(min: -8192, max: 8192)
+    } // func pickRandomEndLine
     
     func generateAICarStats()
     {
@@ -43,54 +59,49 @@ class AICarClass
         AICarTraction = random(min: 10, max: 20)
         AICarTurnRate = random(min: 10, max: 30)
         AICarAcceleration = random(min: 15, max: 60)
-    }
+    } // func generateAICarStats
     
     func goToFinishLine()
     {
-        // let dx = theScene!.AICrSprite.position.x
-        // let dy = theScene!.AICarSprite.position.y
+        var angleToEndLine = atan2(AICarDy, AICarDx)
         
-        /*
-        var angleToPlyaer = atan2(dy, dx)
-        
-        if (angleToPlyaer < 0)
+        if (angleToEndLine < 0)
         {
-            angleToPlyaer += CGFloat.pi*2
-        }
+            angleToEndLine += CGFloat.pi*2
+        } // if
         
-        if (sprite.zRotation < 0)
+        if (AICarSprite.zRotation < 0)
         {
-            sprite.zRotation += CGFloat.pi*2
-        }
+            AICarSprite.zRotation += CGFloat.pi*2
+        } // if
         
-        if (sprite.zRotation > CGFloat.pi*2)
+        if (AICarSprite.zRotation > CGFloat.pi*2)
         {
-            sprite.zRotation -= CGFloat.pi*2
-        }
+            AICarSprite.zRotation -= CGFloat.pi*2
+        } // if
         
-        var angleDiff = sprite.zRotation - angleToPlyaer
+        var angleDiff = AICarSprite.zRotation - angleToEndLine
         
         if (angleDiff < 0)
         {
             angleDiff += CGFloat.pi*2
-        }
+        } // if
         
         if (angleDiff > CGFloat.pi)
         {
-            sprite.zRotation += turnRate
-        }
+            AICarSprite.zRotation += AICarTurnRate
+        } // if
         
         else
         {
-            sprite.zRotation -= turnRate
-        }
+            AICarSprite.zRotation -= AICarTurnRate
+        } // else
         
-        let moveDX = cos(sprite.zRotation)*speed
-        let moveDY = sin(sprite.zRotation)*speed
-        sprite.position.x += moveDX
-        sprite.position.y += moveDY
+        let moveDX = cos(AICarSprite.zRotation)*AICarSpeed
+        let moveDY = sin(AICarSprite.zRotation)*AICarSpeed
+        AICarSprite.position.x += moveDX
+        AICarSprite.position.y += moveDY
         
-        */
     } // func goToFinishLine
     
     func slowDown()
@@ -123,14 +134,11 @@ class AICarClass
         
     } // func reverse
     
-    func didMove()
+    public func update()
     {
-        
-    } // func didMove
-    
-    func update()
-    {
-        
+        pickRandomEndLine()
+        generateAICarStats()
+        goToFinishLine()
     } // func update()
 
 } // class AICarClass
