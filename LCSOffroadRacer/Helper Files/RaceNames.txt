@@ -5,7 +5,7 @@
 # All entries must be separated with comma
 # Do not use quotation marks anywhere
 #Locations
-Dakar,Paris,Barcelona,Moscow,Dubai,Mumbai,Hong Kong,Fort Worth,Texas,San Diego,Brazil,Argentina,St. Tropez,Jamaica,Mexico City,Tegucigalpa,Buenos Aires,Lisbon
+Dakar,Paris,Barcelona,Moscow,Dubai,Mumbai,Hong Kong,Fort Worth,Texas,San Diego,Brazil,Argentina,St. Tropez,Jamaica,Mexico City,Tegucigalpa,Buenos Aires,Lisbon,Japan,Shanghai,Isle of Skye,Palau,New Zealand,Santorini,Ha Long Bay,St. Lucia,Yellowstone,Panjin,Beijing,Jordan,Bangkok,Pamukkale,Bora Bora,Mù Cang Chải,Torres del Paine,Krabi,Bagan,Fernando de Noronha,Cape Town,Sossusvlei,El Yunque,Zlatni Rat,The Lofoten Islands,Miho no Matsubara,Isla Holbox,Iguazú Falls,Giza,Marrakesh,Tahiti,Maui,Phuket,Bali
 # Second Name
 Rally,Challenge,Grand Prix,Championship,100K Challenge,100K,1000
 # First Name

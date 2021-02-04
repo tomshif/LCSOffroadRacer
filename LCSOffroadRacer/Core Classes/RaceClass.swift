@@ -49,6 +49,13 @@ class RaceClass
     var isHard3:Bool = false
     
     var MMR:Int = 0
+    
+    var aiCars = [AICarClass]()
+    
+    var mapPreviewOne = SKSpriteNode()
+    var mapPreviewTwo = SKSpriteNode()
+    var mapPreviewThree = SKSpriteNode()
+    
     // variables
 
     let hardFirstPlaceMoney:Int = 1000
