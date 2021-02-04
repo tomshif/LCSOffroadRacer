@@ -14,7 +14,7 @@ class PCCarClass
     var theScene : GameScene?
     var playerVector = CGVector()
     
-    var speed:CGFloat = 1
+    var speed:CGFloat = 30
     var turning:CGFloat = 0.5
     var traction:CGFloat = 1
     var acceleration:CGFloat = 1
@@ -52,12 +52,13 @@ class PCCarClass
     } //public func updateStats() / determines part ratings
      
     public func speedUp() {
-        if currentSpeed < speed*UPGRADEFILLER {
-            currentSpeed += (acceleration*UPGRADEFILLER)
+        var movement = sqrt((playerVector.dx*playerVector.dx)+(playerVector.dy*playerVector.dy))
+        if movement < speed*UPGRADEFILLER {
+            movement += (acceleration*UPGRADEFILLER)/30
             currentSpeed += (traction*UPGRADEFILLER)/30
             
-            dx = cos(sprite.zRotation)*currentSpeed/60
-            dy = sin(sprite.zRotation)*currentSpeed/60
+            dx = cos(sprite.zRotation)*movement/60
+            dy = sin(sprite.zRotation)*movement/60
             
             playerVector.dx += dx
             playerVector.dy += dy
@@ -65,32 +66,27 @@ class PCCarClass
     } //public func speedUp() / accelerates car
     
     public func turnLeft() {
-        sprite.zRotation += ((turning*UPGRADEFILLER)/30)+currentSpeed
+        var movement = sqrt((playerVector.dx*playerVector.dx)+(playerVector.dy*playerVector.dy))
+        sprite.zRotation += (turning*UPGRADEFILLER)*(movement/(speed*UPGRADEFILLER)/2)
         
-        dx = cos(sprite.zRotation)*currentSpeed/60
-        dy = sin(sprite.zRotation)*currentSpeed/60
-        
-        playerVector.dx += dx
-        playerVector.dy += dy
-
+        dx += cos(sprite.zRotation)*(movement/60)/(speed*UPGRADEFILLER)
+        dy += sin(sprite.zRotation)*(movement/60)/(speed*UPGRADEFILLER)
     } //public func turnLeft() / turns car left
 
     public func turnRight() {
-        sprite.zRotation -= ((turning*UPGRADEFILLER)/30)+currentSpeed
+        var movement = sqrt((playerVector.dx*playerVector.dx)+(playerVector.dy*playerVector.dy))
+        sprite.zRotation -= (turning*UPGRADEFILLER)*(movement/(speed*UPGRADEFILLER)/2)
         
-        dx = cos(sprite.zRotation)*currentSpeed/60
-        dy = sin(sprite.zRotation)*currentSpeed/60
-        
-        playerVector.dx += dx
-        playerVector.dy += dy
-
+        dx -= cos(sprite.zRotation)*(movement/60)/(speed*UPGRADEFILLER)
+        dy -= sin(sprite.zRotation)*(movement/60)/(speed*UPGRADEFILLER)
     } //public func turnRight() / turns car right
      
      public func reverseSpeed() {
-        currentSpeed -= (traction*UPGRADEFILLER)/60
+        var movement = sqrt((playerVector.dx*playerVector.dx)+(playerVector.dy*playerVector.dy))
+        movement -= (traction*UPGRADEFILLER)/60
         
-        dx = cos(sprite.zRotation)*currentSpeed/60
-        dy = sin(sprite.zRotation)*currentSpeed/60
+        dx -= cos(sprite.zRotation)*movement/60
+        dy -= sin(sprite.zRotation)*movement/60
         
         playerVector.dx += dx
         playerVector.dy += dy
@@ -100,7 +96,6 @@ class PCCarClass
         sprite.position.x += playerVector.dx
         sprite.position.y += playerVector.dy
         
-        currentSpeed *= 0.000009
     } //public func updatePlayer() / updates player stats and movement
 
  
