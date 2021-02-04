@@ -22,7 +22,7 @@ class HUDClass
     var countdownGo = SKSpriteNode()
     var currentTimer = SKLabelNode(fontNamed: "Arial")
     var raceTime:Int = 0
-    var timerBackdrop = SKSpriteNode()
+    var timerBackdrop = SKSpriteNode(imageNamed: "timer_backdrop")
     
     
     
@@ -65,10 +65,13 @@ func updateAll()
 init(scene:GameScene)
 {
     theScene = scene
-    currentTimer.position = CGPoint(x: theScene!.size.width*0.4, y: theScene!.size.height*0.4)
+    currentTimer.position = CGPoint(x: theScene!.size.width*0.41, y: theScene!.size.height*0.4)
     currentTimer.text="Timer"
     currentTimer.zPosition=1501
     theScene!.hudAnchor.addChild(currentTimer)
+    timerBackdrop.position = CGPoint(x: theScene!.size.width*0.411, y: theScene!.size.height*0.44)
+    timerBackdrop.zPosition=1500
+    theScene!.hudAnchor.addChild(timerBackdrop)
     
 } // Initializer
     
