@@ -13,8 +13,8 @@ class HUDClass
 {
     // variables
     var theScene:GameScene?
-    var speedometer = SKSpriteNode()
-    var speedometerNeedle = SKSpriteNode()
+    var speedometer = SKSpriteNode(imageNamed:  "Speedometer")
+    var speedometerNeedle = SKSpriteNode(imageNamed: "needle")
     var directionalArrow = SKSpriteNode()
     var countdown1 = SKSpriteNode()
     var countdown2 = SKSpriteNode()
@@ -26,8 +26,7 @@ class HUDClass
     
     
     
-    // intend to add a variable that shows the player's place; not sure whether it should be separate variables for each place or just one.
-    // no idea what else to add for variables.
+
     
     // constants
 
@@ -72,19 +71,15 @@ init(scene:GameScene)
     timerBackdrop.position = CGPoint(x: theScene!.size.width*0.411, y: theScene!.size.height*0.44)
     timerBackdrop.zPosition=1500
     theScene!.hudAnchor.addChild(timerBackdrop)
-    
+    speedometer.position = CGPoint(x: theScene!.size.width*0.41, y: theScene!.size.height * -0.385)
+    speedometer.zPosition=1500
+    theScene!.hudAnchor.addChild(speedometer)
+    speedometerNeedle.position = CGPoint(x: theScene!.size.width*0.41, y: theScene!.size.height * -0.385)
+    speedometerNeedle.zPosition=1501
+    theScene!.hudAnchor.addChild(speedometerNeedle)
+    // need the needle rotated to the RIGHT, not sure how to do that yet.
 } // Initializer
     
 } // HUDClass
 
-//-startTime.timeIntervalSinceNow
-//var lastplacecheck = NSDate()
-//if -lastplacecheck.timeintervalsincenow > 1
-//
-//alpha = 50/15 for directional guide
 
-//initializer the scene
-//the scene variable
-//theScene!.hudAnchor.addChild()
-//
-//
