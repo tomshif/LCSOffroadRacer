@@ -16,6 +16,7 @@ class MapClass
     let tileWidth:CGFloat = 128
     var mapTex=SKSpriteNode()
     var topLayer=SKTileMapNode()
+    var treeLayer = SKTileMapNode()
     let map = SKNode()
    
     
@@ -38,9 +39,19 @@ class MapClass
         let sandTiles = tileSet.tileGroups.first { $0.name == "sand"}
         let dirtTiles = tileSet.tileGroups.first { $0.name == "dirt"}
         let waterTiles = tileSet.tileGroups.first { $0.name == "water"}
+        
         let bottomLayer = SKTileMapNode(tileSet: tileSet, columns: columns, rows: rows, tileSize: tileSize)
         bottomLayer.fill(with: waterTiles)
         map.addChild(bottomLayer)
+
+        let treeSet = SKTileSet(named: "treee")!
+
+        treeLayer = SKTileMapNode(tileSet: treeSet, columns: columns, rows: rows, tileSize: tileSize)
+        let treeTiles = treeSet.tileGroups.first { $0.name == "tree"}
+        map.addChild(treeLayer)
+        treeLayer.enableAutomapping = true
+        treeLayer.zPosition = 99999
+        treeLayer.fill(with: treeTiles)
 
         
         func mapPosition()
@@ -110,10 +121,13 @@ class MapClass
                  else if terrainHeight < 1 && terrainHeight > 0.5{
                      topLayer.setTileGroup(sandTiles, forColumn: column, row: row)
                  }
+               
              }//for rows
          }//for columns
         
+        
                 
+        
         
     }//init
     
