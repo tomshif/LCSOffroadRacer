@@ -54,7 +54,7 @@ class PCCarClass
     public func speedUp() {
         var movement = sqrt((playerVector.dx*playerVector.dx)+(playerVector.dy*playerVector.dy))
         if movement < speed*UPGRADEFILLER {
-            movement += (acceleration*UPGRADEFILLER)/30
+            movement += (acceleration*UPGRADEFILLER)/15
             currentSpeed += (traction*UPGRADEFILLER)/30
             
             dx = cos(sprite.zRotation)*movement/60
@@ -75,6 +75,7 @@ class PCCarClass
 
     public func turnRight() {
         var movement = sqrt((playerVector.dx*playerVector.dx)+(playerVector.dy*playerVector.dy))
+        
         sprite.zRotation -= (turning*UPGRADEFILLER)*(movement/speed*0.75)
         
         playerVector.dx = cos(sprite.zRotation)*(movement)
@@ -82,14 +83,17 @@ class PCCarClass
     } //public func turnRight() / turns car right
      
      public func reverseSpeed() {
-        var movement = sqrt((playerVector.dx*playerVector.dx)+(playerVector.dy*playerVector.dy))
-        movement -= (traction*UPGRADEFILLER)/60
-        
-        dx -= cos(sprite.zRotation)*movement/60
-        dy -= sin(sprite.zRotation)*movement/60
-        
-        playerVector.dx += dx
-        playerVector.dy += dy
+        var movement = -sqrt((playerVector.dx*playerVector.dx)+(playerVector.dy*playerVector.dy))
+        if movement >= -speed*UPGRADEFILLER {
+            movement -= (acceleration*UPGRADEFILLER)/5
+            currentSpeed -= (traction*UPGRADEFILLER)/30
+            
+            dx = cos(sprite.zRotation)*movement/60
+            dy = sin(sprite.zRotation)*movement/60
+            
+            playerVector.dx += dx
+            playerVector.dy += dy
+        } // if currentSpeed is less than speed x engine / car cannot accelerate beyond max speed
      } // public func reverseSpeed() / either stops the car or puts it in reverse
      
     public func update() {
