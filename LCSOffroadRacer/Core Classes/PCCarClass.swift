@@ -15,7 +15,7 @@ class PCCarClass
     var playerVector = CGVector()
     
     var speed:CGFloat = 30
-    var turning:CGFloat = 0.5
+    var turning:CGFloat = 0.05
     var traction:CGFloat = 1
     var acceleration:CGFloat = 1
 
@@ -67,18 +67,18 @@ class PCCarClass
     
     public func turnLeft() {
         var movement = sqrt((playerVector.dx*playerVector.dx)+(playerVector.dy*playerVector.dy))
-        sprite.zRotation += (turning*UPGRADEFILLER)*(movement/(speed*UPGRADEFILLER)/2)
+        sprite.zRotation += (turning*UPGRADEFILLER)*(movement/speed*0.75)
         
-        dx += cos(sprite.zRotation)*(movement/60)/(speed*UPGRADEFILLER)
-        dy += sin(sprite.zRotation)*(movement/60)/(speed*UPGRADEFILLER)
+        playerVector.dx = cos(sprite.zRotation)*(movement)
+        playerVector.dy = sin(sprite.zRotation)*(movement)
     } //public func turnLeft() / turns car left
 
     public func turnRight() {
         var movement = sqrt((playerVector.dx*playerVector.dx)+(playerVector.dy*playerVector.dy))
-        sprite.zRotation -= (turning*UPGRADEFILLER)*(movement/(speed*UPGRADEFILLER)/2)
+        sprite.zRotation -= (turning*UPGRADEFILLER)*(movement/speed*0.75)
         
-        dx -= cos(sprite.zRotation)*(movement/60)/(speed*UPGRADEFILLER)
-        dy -= sin(sprite.zRotation)*(movement/60)/(speed*UPGRADEFILLER)
+        playerVector.dx = cos(sprite.zRotation)*(movement)
+        playerVector.dy = sin(sprite.zRotation)*(movement)
     } //public func turnRight() / turns car right
      
      public func reverseSpeed() {

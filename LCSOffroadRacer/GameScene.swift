@@ -530,11 +530,14 @@ class GameScene: SKScene {
                 {
                     srAnchor.removeAllChildren()
                     loadInRaceScreen()
+                    cam.setScale(2.0)
                 }
                 
             case GAMESTATE.INRACE:
                 if(to==GAMESTATE.ENDRACE)
                 {
+                    cam.setScale(1.0)
+                    cam.position=CGPoint.zero
                     irAnchor.removeAllChildren()
                     loadEndRaceScreen()
                 }
