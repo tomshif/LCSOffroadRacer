@@ -44,25 +44,37 @@ class AICarClass
         AICarSprite.zPosition = 4
         AICarSprite.position.x = AICarDx
         AICarSprite.position.y = AICarDy
+        
+        pickRandomEndLine()
+        generateAICarStats()
     } // init
     
     func pickRandomEndLine()
     {
         finishLineDx = random(min: -8192, max: 8192)
         finishLineDy = random(min: -8192, max: 8192)
+        
+        let tempFinish=SKLabelNode(text: "Target")
+        tempFinish.zPosition=1500
+        tempFinish.position=CGPoint(x: finishLineDx, y: finishLineDy)
+        print("TempFinish: \(tempFinish.position)")
+        theScene!.addChild(tempFinish)
     } // func pickRandomEndLine
     
     func generateAICarStats()
     {
-        AICarSpeed = random(min: 10, max: 50)
+        AICarSpeed = random(min: 5, max: 10)
         AICarEnginePower = random(min: 10, max: 30)
         AICarTraction = random(min: 10, max: 20)
-        AICarTurnRate = random(min: 10, max: 30)
+        AICarTurnRate = random(min: 0.05, max: 0.1)
         AICarAcceleration = random(min: 15, max: 60)
     } // func generateAICarStats
     
     func goToFinishLine()
     {
+        AICarDx = finishLineDx - AICarSprite.position.x
+        AICarDy = finishLineDy - AICarSprite.position.y
+        
         var angleToEndLine = atan2(AICarDy, AICarDx)
         
         if (angleToEndLine < 0)
@@ -136,8 +148,7 @@ class AICarClass
     
     public func update()
     {
-        pickRandomEndLine()
-        generateAICarStats()
+
         goToFinishLine()
     } // func update()
 
