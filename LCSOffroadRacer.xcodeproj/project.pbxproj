@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5D08238225D1880400146292 /* DirtStraight.sks in Resources */ = {isa = PBXBuildFile; fileRef = 5D08238025D1880400146292 /* DirtStraight.sks */; };
+		5D08238325D1880400146292 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5D08238125D1880400146292 /* Assets.xcassets */; };
 		BFD29B4B25CAEBE2003670AC /* mapTest.sks in Resources */ = {isa = PBXBuildFile; fileRef = BFD29B4A25CAEBE2003670AC /* mapTest.sks */; };
 		E2524F6925B7565E006EE73C /* AICarClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2524F6025B7565D006EE73C /* AICarClass.swift */; };
 		E2524F6A25B7565E006EE73C /* PCCarClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2524F6125B7565D006EE73C /* PCCarClass.swift */; };
@@ -30,6 +32,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5D08238025D1880400146292 /* DirtStraight.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = DirtStraight.sks; sourceTree = "<group>"; };
+		5D08238125D1880400146292 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BFD29B4A25CAEBE2003670AC /* mapTest.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = mapTest.sks; sourceTree = "<group>"; };
 		E2524F6025B7565D006EE73C /* AICarClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AICarClass.swift; sourceTree = "<group>"; };
 		E2524F6125B7565D006EE73C /* PCCarClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PCCarClass.swift; sourceTree = "<group>"; };
@@ -66,6 +70,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5D08237F25D187E400146292 /* Particle FX */ = {
+			isa = PBXGroup;
+			children = (
+				5D08238025D1880400146292 /* DirtStraight.sks */,
+				5D08238125D1880400146292 /* Assets.xcassets */,
+			);
+			path = "Particle FX";
+			sourceTree = "<group>";
+		};
 		E2524F5F25B7564B006EE73C /* Core Classes */ = {
 			isa = PBXGroup;
 			children = (
@@ -129,6 +142,7 @@
 				E2524F5F25B7564B006EE73C /* Core Classes */,
 				E2524F7725B756AD006EE73C /* Helper Files */,
 				E2524F7D25B75809006EE73C /* Misc Files */,
+				5D08237F25D187E400146292 /* Particle FX */,
 				F42ED01925B754BD00EAB698 /* Info.plist */,
 				F42ED01425B754BD00EAB698 /* Assets.xcassets */,
 			);
@@ -193,11 +207,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5D08238225D1880400146292 /* DirtStraight.sks in Resources */,
 				F42ED00D25B754BA00EAB698 /* GameScene.sks in Resources */,
 				E255CBCC25CAE631009E252B /* RaceNames.txt in Resources */,
 				F42ED01525B754BD00EAB698 /* Assets.xcassets in Resources */,
 				F42ED00F25B754BA00EAB698 /* Actions.sks in Resources */,
 				BFD29B4B25CAEBE2003670AC /* mapTest.sks in Resources */,
+				5D08238325D1880400146292 /* Assets.xcassets in Resources */,
 				F42ED01825B754BD00EAB698 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
