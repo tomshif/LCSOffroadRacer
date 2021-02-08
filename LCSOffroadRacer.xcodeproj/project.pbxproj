@@ -106,20 +106,6 @@
 			path = "Misc Files";
 			sourceTree = "<group>";
 		};
-		E2524F8325B86CAB006EE73C /* Sound FX */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "Sound FX";
-			sourceTree = "<group>";
-		};
-		E2524F8425B86CB7006EE73C /* Particle FX */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "Particle FX";
-			sourceTree = "<group>";
-		};
 		F42ECFFE25B754BA00EAB698 = {
 			isa = PBXGroup;
 			children = (
@@ -143,8 +129,6 @@
 				E2524F5F25B7564B006EE73C /* Core Classes */,
 				E2524F7725B756AD006EE73C /* Helper Files */,
 				E2524F7D25B75809006EE73C /* Misc Files */,
-				E2524F8425B86CB7006EE73C /* Particle FX */,
-				E2524F8325B86CAB006EE73C /* Sound FX */,
 				F42ED01925B754BD00EAB698 /* Info.plist */,
 				F42ED01425B754BD00EAB698 /* Assets.xcassets */,
 			);

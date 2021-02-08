@@ -466,6 +466,7 @@ class GameScene: SKScene {
     {
         var erTemp=SKSpriteNode(imageNamed: "erTemp")
         erAnchor.addChild(erTemp)
+        
         gameState=GAMESTATE.ENDRACE
     } // loadEndRaceScreen
     
@@ -536,6 +537,7 @@ class GameScene: SKScene {
             case GAMESTATE.INRACE:
                 if(to==GAMESTATE.ENDRACE)
                 {
+                    hudAnchor.removeAllChildren()
                     cam.setScale(1.0)
                     cam.position=CGPoint.zero
                     irAnchor.removeAllChildren()
