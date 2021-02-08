@@ -134,6 +134,12 @@ class RaceClass
     
     func timeOfDay()
     {
+        let chooseTime = random(min: 0, max: 1)
+        
+        if chooseTime > 0.65
+        {
+            isSunrise = true
+        }// sunrise true
         
     } // func timeOfDay
     
@@ -152,7 +158,9 @@ class RaceClass
         else if chooseWeather > 0.5
         {
             isStorming = true
+            //make screen darker due to storming
         } // Choose weather
+        
     } // func weather
     
     func particles() // controls the particles coming from the car
