@@ -54,11 +54,13 @@ class AICarClass
         finishLineDx = random(min: -8192, max: 8192)
         finishLineDy = random(min: -8192, max: 8192)
         
-        let tempFinish=SKLabelNode(text: "Target")
-        tempFinish.zPosition=1500
-        tempFinish.position=CGPoint(x: finishLineDx, y: finishLineDy)
+        // Creates a "Target" label on the Random Finish Point
+        let tempFinish = SKLabelNode(text: "Target")
+        tempFinish.zPosition = 1500
+        tempFinish.position = CGPoint(x: finishLineDx, y: finishLineDy)
         print("TempFinish: \(tempFinish.position)")
         theScene!.addChild(tempFinish)
+        
     } // func pickRandomEndLine
     
     func generateAICarStats()
