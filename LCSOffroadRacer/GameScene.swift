@@ -611,6 +611,10 @@ class GameScene: SKScene {
             
         case GAMESTATE.INRACE:
             checkKeysinRace()
+            for car in theGame!.AICarList
+            {
+                car.update()
+            }
             if playerCar != nil
             {
                 playerCar!.update()
