@@ -39,6 +39,7 @@ class MapClass
         let sandTiles = tileSet.tileGroups.first { $0.name == "sand"}
         let dirtTiles = tileSet.tileGroups.first { $0.name == "dirt"}
         let waterTiles = tileSet.tileGroups.first { $0.name == "water"}
+        let tree = SKSpriteNode(imageNamed: "tree_large")
         
         let bottomLayer = SKTileMapNode(tileSet: tileSet, columns: columns, rows: rows, tileSize: tileSize)
         bottomLayer.fill(with: waterTiles)
@@ -108,12 +109,15 @@ class MapClass
          
         //different tiles depending on terrain height
         
-         for column in 0 ..< columns {
-             for row in 0 ..< rows {
+         for column in 0 ..< columns
+         {
+             for row in 0 ..< rows
+             {
                  let location = vector2(Int32(row), Int32(column))
                  let terrainHeight = noiseMap.value(at: location)
                 
-                 if terrainHeight > -0.5 && terrainHeight < -0.2 {
+                 if terrainHeight > -0.5 && terrainHeight < -0.2
+                 {
                      topLayer.setTileGroup(dirtTiles, forColumn: column, row: row)
                  } else if terrainHeight < 0.5{
                      topLayer.setTileGroup(grassTiles, forColumn: column, row: row)
