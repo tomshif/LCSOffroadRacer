@@ -178,6 +178,8 @@ class GameScene: SKScene {
                 else if node.name == "startButton" && currentRaceSelected > 0
                 {
                     changeGameState(to: GAMESTATE.STARTRACE)
+                    let tempRace=RaceClass(MMR: 0, scene: self)
+                    theGame!.theRace=tempRace
                     
                 }
                 

@@ -13,6 +13,7 @@ class AICarClass
     // variables
     var AICarSprite = SKSpriteNode(imageNamed: "car_blue_1")
     var theScene:GameScene?
+    var theRace:RaceClass?
     
     var AICarSpeed:CGFloat = 0
     var AICarEnginePower:CGFloat = 0
@@ -36,10 +37,25 @@ class AICarClass
     let maxAICarTurnRate:CGFloat = 10
     let maxAICarBrake:CGFloat = 10
     
+    let AIUPGRADEFILLER:CGFloat = 1 // used to fill in values until upgrades are ready
+    
     init(scene:GameScene)
     {
         theScene = scene
         theScene!.irAnchor.addChild(AICarSprite)
+        
+        if(theScene != nil)
+        {
+            if(theScene!.theGame != nil)
+            {
+                if(theScene!.theGame!.theRace != nil)
+                {
+                    theRace=theScene!.theGame!.theRace!
+                }
+            }
+        }
+        
+        
         
         AICarSprite.zPosition = 4
         AICarSprite.position.x = AICarDx
@@ -65,11 +81,16 @@ class AICarClass
     
     func generateAICarStats()
     {
-        AICarSpeed = random(min: 5, max: 10)
-        AICarEnginePower = random(min: 10, max: 30)
-        AICarTraction = random(min: 10, max: 20)
-        AICarTurnRate = random(min: 0.05, max: 0.1)
-        AICarAcceleration = random(min: 15, max: 60)
+        AICarSpeed = AIUPGRADEFILLER * 15
+        //0.2 = 5, 1 = 10
+        AICarEnginePower = AIUPGRADEFILLER * 30
+        //0.2 = 10, 1 = 30
+        AICarTraction = AIUPGRADEFILLER * 20
+        //0.2 = 10, 1 = 20
+        AICarTurnRate = AIUPGRADEFILLER * 0.1
+        //0.2, = 0.05, 1 = 0.1
+        AICarAcceleration = AIUPGRADEFILLER * 60
+        //0.2 = 15, 1 = 60
     } // func generateAICarStats
     
     func goToFinishLine()
@@ -150,7 +171,6 @@ class AICarClass
     
     public func update()
     {
-
         goToFinishLine()
     } // func update()
 

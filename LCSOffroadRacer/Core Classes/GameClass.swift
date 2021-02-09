@@ -17,6 +17,8 @@ class GameClass
     var lastNameList=[String]()
     var locationList=[String]()
     
+    var theRace:RaceClass?
+    
 
     // constants
 
