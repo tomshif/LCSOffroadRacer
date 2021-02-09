@@ -308,14 +308,15 @@ class GameScene: SKScene {
         cam.position = CGPoint.zero
         
         let mmBG=SKSpriteNode(imageNamed: "mmTempBack01")
-        let mmLogo=SKSpriteNode(imageNamed: "tempLogo")
+        let mmLogo=SKSpriteNode(imageNamed: "mm_logo")
         let mmFrame=SKSpriteNode(imageNamed: "mmMenuFrame01")
         
         
         mmAnchor.addChild(mmBG)
         
-        mmLogo.position = CGPoint(x: -size.width*0.35, y: size.height*0.35)
+        mmLogo.position = CGPoint(x: -size.width*0.25, y: size.height*0.35)
         mmLogo.zPosition=1
+        mmLogo.setScale(0.2)
         mmLogo.name="mmLogo"
         mmAnchor.addChild(mmLogo)
         
