@@ -136,7 +136,7 @@ class GameScene: SKScene {
             {
                 if node.name=="mmPlayButton"
                 {
-                    
+                    theGame=GameClass()
                     changeGameState(to: GAMESTATE.CHOOSERACE)
                 }
             } // if the name is not nil
@@ -336,10 +336,7 @@ class GameScene: SKScene {
         gameState=GAMESTATE.MAINMENU
         currentRaceSelected = -1
         
-        if (currentPopUp == nil)
-        {
-            currentPopUp=PopUpClass(theScene: self, popType: POPTYPE.YESNO, parentNode: puAnchor, popText: "Testing - Do you know how to use pop up windows?")
-        }
+
         
     } // load main menu
     
@@ -452,7 +449,7 @@ class GameScene: SKScene {
         theHud=HUDClass(scene: self)
         let map=MapClass(scene: self)
         playerCar=PCCarClass(mmr: 0, scene: self)
-        theGame=GameClass()
+        
         
         // TEMP Add single AI Car to game
         let tempCar=AICarClass(scene: self)
