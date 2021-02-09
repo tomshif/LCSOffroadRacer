@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		28BFE54525D2D20C00B401D1 /* WaterStraight.sks in Resources */ = {isa = PBXBuildFile; fileRef = 28BFE54425D2D20C00B401D1 /* WaterStraight.sks */; };
 		28BFE54725D2D65E00B401D1 /* MyParticle.sks in Resources */ = {isa = PBXBuildFile; fileRef = 28BFE54625D2D65E00B401D1 /* MyParticle.sks */; };
+		28BFE54925D2D82100B401D1 /* GrassStraight1.sks in Resources */ = {isa = PBXBuildFile; fileRef = 28BFE54825D2D82100B401D1 /* GrassStraight1.sks */; };
 		5D08238225D1880400146292 /* DirtStraight.sks in Resources */ = {isa = PBXBuildFile; fileRef = 5D08238025D1880400146292 /* DirtStraight.sks */; };
 		5D08238325D1880400146292 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5D08238125D1880400146292 /* Assets.xcassets */; };
 		BFD29B4B25CAEBE2003670AC /* mapTest.sks in Resources */ = {isa = PBXBuildFile; fileRef = BFD29B4A25CAEBE2003670AC /* mapTest.sks */; };
@@ -36,6 +37,7 @@
 /* Begin PBXFileReference section */
 		28BFE54425D2D20C00B401D1 /* WaterStraight.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = WaterStraight.sks; sourceTree = "<group>"; };
 		28BFE54625D2D65E00B401D1 /* MyParticle.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MyParticle.sks; sourceTree = "<group>"; };
+		28BFE54825D2D82100B401D1 /* GrassStraight1.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GrassStraight1.sks; sourceTree = "<group>"; };
 		5D08238025D1880400146292 /* DirtStraight.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = DirtStraight.sks; sourceTree = "<group>"; };
 		5D08238125D1880400146292 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BFD29B4A25CAEBE2003670AC /* mapTest.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = mapTest.sks; sourceTree = "<group>"; };
@@ -81,6 +83,7 @@
 				5D08238125D1880400146292 /* Assets.xcassets */,
 				28BFE54425D2D20C00B401D1 /* WaterStraight.sks */,
 				28BFE54625D2D65E00B401D1 /* MyParticle.sks */,
+				28BFE54825D2D82100B401D1 /* GrassStraight1.sks */,
 			);
 			path = "Particle FX";
 			sourceTree = "<group>";
@@ -218,6 +221,7 @@
 				E255CBCC25CAE631009E252B /* RaceNames.txt in Resources */,
 				F42ED01525B754BD00EAB698 /* Assets.xcassets in Resources */,
 				28BFE54525D2D20C00B401D1 /* WaterStraight.sks in Resources */,
+				28BFE54925D2D82100B401D1 /* GrassStraight1.sks in Resources */,
 				F42ED00F25B754BA00EAB698 /* Actions.sks in Resources */,
 				BFD29B4B25CAEBE2003670AC /* mapTest.sks in Resources */,
 				5D08238325D1880400146292 /* Assets.xcassets in Resources */,
