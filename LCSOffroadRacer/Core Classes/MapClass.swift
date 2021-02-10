@@ -100,7 +100,7 @@ class MapClass
           
         let noiseMap1 = makeNoiseMap1(columns: columns, rows: rows)
         let mapT1 = SKTexture(noiseMap: noiseMap1)
-        mapText1 = SKSpriteNode(texture: mapT1)
+        //mapText1 = SKSpriteNode(texture: mapT1)
         // Generates different tiles depending on terrain height
         
         func makeNoiseMap2(columns: Int, rows: Int) -> GKNoiseMap
@@ -121,7 +121,7 @@ class MapClass
           
         let noiseMap2 = makeNoiseMap2(columns: columns, rows: rows)
         let mapT2 = SKTexture(noiseMap: noiseMap2)
-        mapText2 = SKSpriteNode(texture: mapT2)
+        //mapText2 = SKSpriteNode(texture: mapT2)
         
         for column in 0 ..< columns
         {
