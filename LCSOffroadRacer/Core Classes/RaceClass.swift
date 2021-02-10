@@ -11,6 +11,8 @@ import SpriteKit
 class RaceClass
 {
     var theScene:GameScene?
+    var theMap:MapClass?
+    
     
     var tileWidth:Int = 128
     var mapWidth:Int = 128

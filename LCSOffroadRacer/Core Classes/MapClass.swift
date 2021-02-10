@@ -43,6 +43,7 @@ class MapClass
         
         let bottomLayer = SKTileMapNode(tileSet: tileSet, columns: columns, rows: rows, tileSize: tileSize)
         bottomLayer.fill(with: waterTiles)
+        
         map.addChild(bottomLayer)
 
         let treeSet = SKTileSet(named: "treee")!
@@ -119,6 +120,7 @@ class MapClass
                  if terrainHeight > -0.5 && terrainHeight < -0.2
                  {
                      topLayer.setTileGroup(dirtTiles, forColumn: column, row: row)
+
                  } else if terrainHeight < 0.5{
                      topLayer.setTileGroup(grassTiles, forColumn: column, row: row)
                  }

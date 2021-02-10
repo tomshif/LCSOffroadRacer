@@ -96,10 +96,53 @@ class PCCarClass
         } // if currentSpeed is less than speed x engine / car cannot accelerate beyond max speed
      } // public func reverseSpeed() / either stops the car or puts it in reverse
      
+    private func getTileType() -> String
+    {
+        var retValue:String="Error"
+        
+        // Get mapSize values (eventually these need to be grabbed from the actual MapClass
+        let mapWidth:CGFloat = 128
+        let tileSize:CGFloat = 128
+        
+        // Compute the row/column for the player car
+        
+        
+        var col = Int(mapWidth/2)
+        col += Int((sprite.position.x)/tileSize)-1
+        var row = Int(mapWidth/2)
+        row += Int((sprite.position.y)/tileSize)
+        if (col > 64)
+        {
+            col += 1
+        }
+        if (row <= 64)
+        {
+            row -= 1
+        }
+        
+        retValue=(theScene!.theGame!.theRace!.theMap!.topLayer.tileGroup(atColumn: col, row: row)?.name ?? "Error")
+        if retValue=="Error"
+        {
+            retValue = "water"
+        }
+        
+        if retValue=="grass01"
+        {
+            retValue="grass"
+        }
+        
+        print("Tile Type: \(retValue) - \(col),\(row)")
+        //print("Car XY: \(col),\(row)")
+        
+        return retValue
+        
+    }
+    
     public func update() {
         sprite.position.x += playerVector.dx
         sprite.position.y += playerVector.dy
-        
+        let tileType = getTileType()
+       
     } //public func updatePlayer() / updates player stats and movement
 
  

@@ -449,6 +449,7 @@ class GameScene: SKScene {
         theHud=HUDClass(scene: self)
         let map=MapClass(scene: self)
         playerCar=PCCarClass(mmr: 0, scene: self)
+        theGame!.theRace!.theMap = map
         
         
         // TEMP Add single AI Car to game
