@@ -81,16 +81,16 @@ class AICarClass
     
     func generateAICarStats()
     {
-        AICarSpeed = AIUPGRADEFILLER * 15
-        //0.2 = 5, 1 = 10
-        AICarEnginePower = AIUPGRADEFILLER * 30
-        //0.2 = 10, 1 = 30
-        AICarTraction = AIUPGRADEFILLER * 20
-        //0.2 = 10, 1 = 20
-        AICarTurnRate = AIUPGRADEFILLER * 0.1
-        //0.2, = 0.05, 1 = 0.1
-        AICarAcceleration = AIUPGRADEFILLER * 60
-        //0.2 = 15, 1 = 60
+        AICarSpeed = 15/2 + (15/2 * AIUPGRADEFILLER)
+
+        AICarEnginePower = 30/2 + (30/2 * AIUPGRADEFILLER)
+
+        AICarTraction = 20/2 + (20/2 * AIUPGRADEFILLER)
+
+        AICarTurnRate = 0.1/2 + (0.1/2 * AIUPGRADEFILLER)
+
+        AICarAcceleration = 60/2 + (60/2 * AIUPGRADEFILLER)
+
     } // func generateAICarStats
     
     func goToFinishLine()
@@ -169,9 +169,52 @@ class AICarClass
         
     } // func reverse
     
+    private func getTileType() -> String
+              {
+                  var retValue:String="Error"
+                  
+                  // Get mapSize values (eventually these need to be grabbed from the actual MapClass
+                  let mapWidth:CGFloat = 128
+                  let tileSize:CGFloat = 128
+                  
+                  // Compute the row/column for the player car
+                  
+                  
+                  var col = Int(mapWidth/2)
+                  col += Int((AICarSprite.position.x)/tileSize)-1
+                  var row = Int(mapWidth/2)
+                  row += Int((AICarSprite.position.y)/tileSize)
+                  if (col > 64)
+                  {
+                      col += 1
+                  }
+                  if (row <= 64)
+                  {
+                      row -= 1
+                  }
+                  
+                  retValue=(theScene!.theGame!.theRace!.theMap!.topLayer.tileGroup(atColumn: col, row: row)?.name ?? "Error")
+                  if retValue=="Error"
+                  {
+                      retValue = "water"
+                  }
+                  
+                  if retValue=="grass01"
+                  {
+                      retValue="grass"
+                  }
+                  
+                  print("AI Tile Type: \(retValue) - \(col),\(row)")
+                  //print("Car XY: \(col),\(row)")
+                  
+                  return retValue
+                  
+              }
+    
     public func update()
     {
         goToFinishLine()
+        let tileType = getTileType()
     } // func update()
 
 } // class AICarClass
