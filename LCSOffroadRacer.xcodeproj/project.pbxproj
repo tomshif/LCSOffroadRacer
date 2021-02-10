@@ -12,6 +12,9 @@
 		28BFE54925D2D82100B401D1 /* GrassStraight1.sks in Resources */ = {isa = PBXBuildFile; fileRef = 28BFE54825D2D82100B401D1 /* GrassStraight1.sks */; };
 		5D08238225D1880400146292 /* DirtStraight.sks in Resources */ = {isa = PBXBuildFile; fileRef = 5D08238025D1880400146292 /* DirtStraight.sks */; };
 		5D08238325D1880400146292 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5D08238125D1880400146292 /* Assets.xcassets */; };
+		5DC9350E25D426EB005423F2 /* FireworkFX.sks in Resources */ = {isa = PBXBuildFile; fileRef = 5DC9350D25D426EB005423F2 /* FireworkFX.sks */; };
+		5DC9351125D42745005423F2 /* SparklerFX.sks in Resources */ = {isa = PBXBuildFile; fileRef = 5DC9351025D42745005423F2 /* SparklerFX.sks */; };
+		5DC9351425D4279F005423F2 /* ShowerFX.sks in Resources */ = {isa = PBXBuildFile; fileRef = 5DC9351325D4279F005423F2 /* ShowerFX.sks */; };
 		BFD29B4B25CAEBE2003670AC /* mapTest.sks in Resources */ = {isa = PBXBuildFile; fileRef = BFD29B4A25CAEBE2003670AC /* mapTest.sks */; };
 		E2524F6925B7565E006EE73C /* AICarClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2524F6025B7565D006EE73C /* AICarClass.swift */; };
 		E2524F6A25B7565E006EE73C /* PCCarClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2524F6125B7565D006EE73C /* PCCarClass.swift */; };
@@ -40,6 +43,9 @@
 		28BFE54825D2D82100B401D1 /* GrassStraight1.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GrassStraight1.sks; sourceTree = "<group>"; };
 		5D08238025D1880400146292 /* DirtStraight.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = DirtStraight.sks; sourceTree = "<group>"; };
 		5D08238125D1880400146292 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5DC9350D25D426EB005423F2 /* FireworkFX.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = FireworkFX.sks; sourceTree = "<group>"; };
+		5DC9351025D42745005423F2 /* SparklerFX.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = SparklerFX.sks; sourceTree = "<group>"; };
+		5DC9351325D4279F005423F2 /* ShowerFX.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = ShowerFX.sks; sourceTree = "<group>"; };
 		BFD29B4A25CAEBE2003670AC /* mapTest.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = mapTest.sks; sourceTree = "<group>"; };
 		E2524F6025B7565D006EE73C /* AICarClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AICarClass.swift; sourceTree = "<group>"; };
 		E2524F6125B7565D006EE73C /* PCCarClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PCCarClass.swift; sourceTree = "<group>"; };
@@ -84,6 +90,9 @@
 				28BFE54425D2D20C00B401D1 /* WaterStraight.sks */,
 				28BFE54625D2D65E00B401D1 /* MyParticle.sks */,
 				28BFE54825D2D82100B401D1 /* GrassStraight1.sks */,
+				5DC9350D25D426EB005423F2 /* FireworkFX.sks */,
+				5DC9351025D42745005423F2 /* SparklerFX.sks */,
+				5DC9351325D4279F005423F2 /* ShowerFX.sks */,
 			);
 			path = "Particle FX";
 			sourceTree = "<group>";
@@ -223,7 +232,10 @@
 				28BFE54525D2D20C00B401D1 /* WaterStraight.sks in Resources */,
 				28BFE54925D2D82100B401D1 /* GrassStraight1.sks in Resources */,
 				F42ED00F25B754BA00EAB698 /* Actions.sks in Resources */,
+				5DC9351425D4279F005423F2 /* ShowerFX.sks in Resources */,
+				5DC9351125D42745005423F2 /* SparklerFX.sks in Resources */,
 				BFD29B4B25CAEBE2003670AC /* mapTest.sks in Resources */,
+				5DC9350E25D426EB005423F2 /* FireworkFX.sks in Resources */,
 				5D08238325D1880400146292 /* Assets.xcassets in Resources */,
 				F42ED01825B754BD00EAB698 /* Main.storyboard in Resources */,
 				28BFE54725D2D65E00B401D1 /* MyParticle.sks in Resources */,
